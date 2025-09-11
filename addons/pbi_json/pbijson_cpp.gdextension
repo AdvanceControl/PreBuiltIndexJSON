@@ -1,53 +1,45 @@
 [configuration]
 entry_symbol = "pbijson_library_init"
 compatibility_minimum = "4.2"
-[raries]
-macos.debug = "./macos/libpbijson_cpp.macos.template_debug.dy"
-macos.debug = "./macos/libpbijson_cpp.macos.template_debug.dy"
-macos.release = "./macos/libpbijson_cpp.macos.template_release.dy"
-macos.release = "./macos/libpbijson_cpp.macos.template_debug.dy"
 
-ios.arm64.debug = "./ios/libpbijson_cpp.ios.template_debug.arm64.dy"
-ios.arm64.debug = "./ios/libpbijson_cpp.ios.template_debug.arm64.dy"
-ios.arm64.release = "./ios/libpbijson_cpp.ios.template_release.arm64.dy"
-ios.arm64.release = "./ios/libpbijson_cpp.ios.template_release.arm64.dy"
+[libraries]
+# macOS: SCons adds 'lib' prefix and '.dylib' suffix.
+# Note: Your build does not include the '.universal' tag.
+macos.debug = "./bin/macos/libpbijson_cpp.macos.template_debug.dylib"
+macos.release = "./bin/macos/libpbijson_cpp.macos.template_release.dylib"
 
-windows.x86_32.debug = "./windows/libpbijson_cpp.windows.template_debug.x86_32.dll"
-windows.x86_32.debug = "./windows/libpbijson_cpp.windows.template_debug.x86_32.dll"
-windows.x86_32.release = "./windows/libpbijson_cpp.windows.template_release.x86_32.dll"
-windows.x86_32.release = "./windows/libpbijson_cpp.windows.template_release.x86_32.dll"
+# iOS: SCons adds 'lib' prefix and '.dylib' suffix.
+ios.arm64.debug = "./bin/ios/libpbijson_cpp.ios.template_debug.arm64.dylib"
+ios.arm64.release = "./bin/ios/libpbijson_cpp.ios.template_release.arm64.dylib"
 
-windows.x86_64.debug = "./windows/pbijson_cpp.windows.template_debug.x86_64.dll"
-windows.x86_64.debug = "./windows/pbijson_cpp.windows.template_debug.x86_64.dll"
-windows.x86_64.release = "./windows/pbijson_cpp.windows.template_release.x86_64.dll"
-windows.x86_64.release = "./windows/pbijson_cpp.windows.template_release.x86_64.dll"
+# Windows: SCons does NOT add a 'lib' prefix.
+windows.x86_32.debug = "./bin/windows/pbijson_cpp.windows.template_debug.x86_32.dll"
+windows.x86_32.release = "./bin/windows/pbijson_cpp.windows.template_release.x86_32.dll"
+windows.x86_64.debug = "./bin/windows/pbijson_cpp.windows.template_debug.x86_64.dll"
+windows.x86_64.release = "./bin/windows/pbijson_cpp.windows.template_release.x86_64.dll"
+windows.arm64.debug = "./bin/windows/pbijson_cpp.windows.template_debug.arm64.dll"
+windows.arm64.release = "./bin/windows/pbijson_cpp.windows.template_release.arm64.dll"
 
-linux.x86_64.debug = "./linux/libpbijson_cpp.linux.template_debug.x86_64.so"
-linux.x86_64.debug = "./linux/libpbijson_cpp.linux.template_debug.x86_64.so"
-linux.x86_64.release = "./linux/libpbijson_cpp.linux.template_release.x86_64.so"
-linux.x86_64.release = "./linux/libpbijson_cpp.linux.template_release.x86_64.so"
+# Linux: SCons adds 'lib' prefix and '.so' suffix.
+linux.x86_32.debug = "./bin/linux/libpbijson_cpp.linux.template_debug.x86_32.so"
+linux.x86_32.release = "./bin/linux/libpbijson_cpp.linux.template_release.x86_32.so"
+linux.x86_64.debug = "./bin/linux/libpbijson_cpp.linux.template_debug.x86_64.so"
+linux.x86_64.release = "./bin/linux/libpbijson_cpp.linux.template_release.x86_64.so"
+linux.arm32.debug = "./bin/linux/libpbijson_cpp.linux.template_debug.arm32.so"
+linux.arm32.release = "./bin/linux/libpbijson_cpp.linux.template_release.arm32.so"
+linux.arm64.debug = "./bin/linux/libpbijson_cpp.linux.template_debug.arm64.so"
+linux.arm64.release = "./bin/linux/libpbijson_cpp.linux.template_release.arm64.so"
 
-linux.arm64.debug = "./linux/libpbijson_cpp.linux.template_debug.arm64.so"
-linux.arm64.debug = "./linux/libpbijson_cpp.linux.template_debug.arm64.so"
-linux.arm64.release = "./linux/libpbijson_cpp.linux.template_release.arm64.so"
-linux.arm64.release = "./linux/libpbijson_cpp.linux.template_release.arm64.so"
+# Android: SCons adds 'lib' prefix and '.so' suffix.
+android.x86_32.debug = "./bin/android/libpbijson_cpp.android.template_debug.x86_32.so"
+android.x86_32.release = "./bin/android/libpbijson_cpp.android.template_release.x86_32.so"
+android.x86_64.debug = "./bin/android/libpbijson_cpp.android.template_debug.x86_64.so"
+android.x86_64.release = "./bin/android/libpbijson_cpp.android.template_release.x86_64.so"
+android.arm32.debug = "./bin/android/libpbijson_cpp.android.template_debug.arm32.so"
+android.arm32.release = "./bin/android/libpbijson_cpp.android.template_release.arm32.so"
+android.arm64.debug = "./bin/android/libpbijson_cpp.android.template_debug.arm64.so"
+android.arm64.release = "./bin/android/libpbijson_cpp.android.template_release.arm64.so"
 
-linux.rv64.debug = "./linux/libpbijson_cpp.linux.template_debug.rv64.so"
-linux.rv64.debug = "./linux/libpbijson_cpp.linux.template_debug.rv64.so"
-linux.rv64.release = "./linux/libpbijson_cpp.linux.template_release.rv64.so"
-linux.rv64.release = "./linux/libpbijson_cpp.linux.template_release.rv64.so"
-
-android.x86_64.debug = "./android/libpbijson_cpp.android.template_debug.x86_64.so"
-android.x86_64.debug = "./android/libpbijson_cpp.android.template_debug.x86_64.so"
-android.x86_64.release = "./android/libpbijson_cpp.android.template_release.x86_64.so"
-android.x86_64.release = "./android/libpbijson_cpp.android.template_release.x86_64.so"
-
-android.arm64.debug = "./android/libpbijson_cpp.android.template_debug.arm64.so"
-android.arm64.debug = "./android/libpbijson_cpp.android.template_debug.arm64.so"
-android.arm64.release = "./android/libpbijson_cpp.android.template_release.arm64.so"
-android.arm64.release = "./android/libpbijson_cpp.android.template_release.arm64.so"
-
-web.wasm32.debug = "./web/libpbijson_cpp.web.template_debug.wasm32.nothreads.wasm"
-web.wasm32.debug = "./web/libpbijson_cpp.web.template_release.wasm32.nothreads.wasm"
-web.wasm32.release = "./web/libpbijson_cpp.web.template_release.wasm32.nothreads.wasm"
-web.wasm32.release = "./web/libpbijson_cpp.web.template_release.wasm32.nothreads.wasm"
+# Web: Your build adds 'lib' prefix, uses '.wasm' suffix.
+web.wasm32.debug = "./bin/web/libpbijson_cpp.web.template_debug.wasm32.wasm"
+web.wasm32.release = "./bin/web/libpbijson_cpp.web.template_release.wasm32.wasm"
