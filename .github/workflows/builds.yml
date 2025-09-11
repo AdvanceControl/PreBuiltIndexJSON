@@ -31,7 +31,6 @@ jobs:
             { platform: web, arch: wasm32, os: ubuntu-22.04 },
           ]
         target-type: [template_debug, template_release]
-        float-precision: [single, double]
 
     runs-on: ${{ matrix.target.os }}
     steps:
@@ -41,15 +40,20 @@ jobs:
       - name: Clone godot-cpp Submodule Manually
         run: git clone https://github.com/godotengine/godot-cpp.git godot-cpp
 
-      - name: Verify Action File
+
+      - name: Verify Action File (Linux/macOS)
+        if: runner.os == 'Linux' || runner.os == 'macOS'
         run: ls -la godot-cpp/.github/actions/setup-godot-cpp/
-      
+        
+      - name: Verify Action File (Windows)
+        if: runner.os == 'Windows'
+        run: Get-ChildItem -Path godot-cpp/.github/actions/setup-godot-cpp/ -Force
+
       - name: Setup godot-cpp
         uses: ./godot-cpp/.github/actions/setup-godot-cpp
         with:
           platform: ${{ matrix.target.platform }}
           em-version: 3.1.62
-
 
 
 
@@ -98,7 +102,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pbijson_cpp-${{ matrix.target.platform }}-${{ matrix.target.arch }}-${{ matrix.float-precision }}-${{ matrix.target-type }}
+          name: pbijson_cpp-${{ matrix.target.platform }}-${{ matrix.target.arch }}-${{ matrix.target-type }}
           path: |
             ${{ github.workspace }}/addons/**
 
