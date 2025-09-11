@@ -1,16 +1,66 @@
-# Godot 4+ specific ignores
+# Godot auto generated files
+*.gen.*
 .godot/
-.nomedia
 
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
+# Ignore library files but not the gdextension file
+demo/bin/*
+!demo/bin/android
+demo/bin/android/*
+!demo/bin/android/.gitkeep
+!demo/bin/linux
+demo/bin/linux/*
+!demo/bin/linux/.gitkeep
+!demo/bin/macos
+demo/bin/macos/*
+!demo/bin/macos/.gitkeep
+!demo/bin/windows
+demo/bin/windows/*
+!demo/bin/windows/.gitkeep
+!demo/bin/*.gdextension
+.sconsign*.dblite
 
-# Imported translations (automatically generated from CSV files)
-*.translation
+addons/pbi_json/bin
+demo/addons/pbi_json/*
+!demo/addons/pbi_json/.gitkeep
 
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+# Ignore custom.py
+custom.py
+
+# Ignore generated compile_commands.json
+compile_commands.json
+
+# Ignore files generated for documentation
+/src/gen
+
+# Binaries
+*.o
+*.os
+*.so
+*.obj
+*.bc
+*.pyc
+*.dblite
+*.pdb
+*.lib
+*.config
+*.creator
+*.creator.user
+*.files
+*.includes
+*.idb
+*.exp
+
+# Other stuff
+*.log
+
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+
+# Jetbrains
+.idea/
+
+# Cmake
+cmake-build*
+CMakeUserPresets.json

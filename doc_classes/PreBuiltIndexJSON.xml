@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="PreBuiltIndexJSON" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<brief_description>
+		Pre-Built Index JSON.
+	</brief_description>
+	<description>
+		PreBuiltIndexJSON defines a file format that uses virtual paths to efficiently look up corresponding values in JSON data.
+		This class can build a standard JSON file into a PBIJSON file.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+			<method name="build_from_file">
+				<return type="PreBuiltIndexJSONOutput" />
+				<param index="0" name="json_file" type="String" />
+				<param index="1" name="target_path" type="String" />
+				<description>
+					Builds a PBIJSON file from a standard JSON file and saves it to the specified path. If successful, the returned [PreBuiltIndexJSONOutput] object will contain the PBIJSON-formatted string data; if it fails, it will contain an error message.
+				</description>
+			</method>
+			<method name="build_from_string">
+				<return type="PreBuiltIndexJSONOutput" />
+				<param index="0" name="json_text" type="String" />
+				<description>
+					Builds a PBIJSON-formatted string from a string containing standard JSON data. If successful, the returned [PreBuiltIndexJSONOutput] object will contain the PBIJSON-formatted string data; if it fails, it will contain an error message.
+				</description>
+			</method>
+			<method name="clear">
+				<return type="void" />
+				<description>
+					Clears all loaded data and resets the object's state, including all caches and error information.
+				</description>
+			</method>
+			<method name="clear_cache">
+				<return type="void" />
+				<param index="0" name="flag" type="int" enum="CacheFlags" />
+				<description>
+					Clears a specific cache based on the given [enum CacheFlags] flag.
+				</description>
+			</method>
+			<method name="clear_caches">
+				<return type="void" />
+				<description>
+					Clears all query caches (value cache, path existence cache, size cache, etc.).
+				</description>
+			</method>
+			<method name="close">
+				<return type="void" />
+				<description>
+					Closes the currently opened data or file, clearing the loaded data but preserving the caches.
+				</description>
+			</method>
+			<method name="get_cache_flags" qualifiers="const">
+				<return type="int" enum="CacheFlags" />
+				<description>
+					Gets the current bitmask used to enable or disable specific caches.
+				</description>
+			</method>
+			<method name="get_keys" qualifiers="const">
+				<return type="Array" />
+				<param index="0" name="key_path" type="String" />
+				<description>
+					Gets all direct child keys of a container at the specified path. For dictionaries, it returns their keys; for arrays, it returns their indices. Performance is much higher than [method get_value].
+				</description>
+			</method>
+			<method name="get_last_error" qualifiers="const">
+				<return type="PreBuiltIndexJSONOutput" />
+				<description>
+					Returns the error that occurred during the last operation. If there was no error, the error type of the returned [PreBuiltIndexJSONOutput] object will be [code]OK[/code].
+				</description>
+			</method>
+			<method name="get_opened_file" qualifiers="const">
+				<return type="String" />
+				<description>
+					Returns the path of the file if the current data was loaded via [method open_file]. Otherwise, returns an empty string.
+				</description>
+			</method>
+			<method name="get_size" qualifiers="const">
+				<return type="int" />
+				<param index="0" name="key_path" type="String" />
+				<description>
+					Gets the size (number of direct child elements) of a container at the specified path. Performance is much higher than [method get_value].
+				</description>
+			</method>
+			<method name="get_sub_paths" qualifiers="const">
+				<return type="PackedStringArray" />
+				<param index="0" name="key_path" type="String" />
+				<description>
+					Recursively gets all sub-paths under a specified path.
+				</description>
+			</method>
+			<method name="get_value" qualifiers="const">
+				<return type="Variant" />
+				<param index="0" name="key_path" type="String" />
+				<param index="1" name="default" type="Variant" default="null" />
+				<description>
+					Gets the value at the specified key path. If the path does not exist or an error occurs, [param default] will be returned.
+				</description>
+			</method>
+			<method name="has_in_cache" qualifiers="const">
+				<return type="bool" />
+				<param index="0" name="flag" type="int" enum="CacheFlags" />
+				<param index="1" name="key_path" type="StringName" />
+				<description>
+					Checks if a specific key exists in a specific cache.
+				</description>
+			</method>
+			<method name="has_path" qualifiers="const">
+				<return type="bool" />
+				<param index="0" name="key_path" type="String" />
+				<description>
+					Checks if a given path exists in the data. This is much faster than checking if [method get_value] returns null.
+				</description>
+			</method>
+			<method name="is_cache_enabled" qualifiers="const">
+				<return type="bool" />
+				<param index="0" name="flag" type="int" enum="CacheFlags" />
+				<description>
+					Checks if the specified cache is currently enabled.
+				</description>
+			</method>
+			<method name="is_data_loaded" qualifiers="const">
+				<return type="bool" />
+				<description>
+					Returns [code]true[/code] if any PBIJSON data is currently loaded (from a file or a string).
+				</description>
+			</method>
+			<method name="open_file">
+				<return type="PreBuiltIndexJSONOutput" />
+				<param index="0" name="path" type="String" />
+				<description>
+					Opens a PBIJSON file for reading. If successful, the error type of the returned [PreBuiltIndexJSONOutput] object will be [code]OK[/code]; otherwise, it will contain an error message.
+				</description>
+			</method>
+			<method name="open_from_array">
+				<return type="void" />
+				<param index="0" name="data" type="PackedStringArray" />
+				<description>
+					Loads data from a [PackedStringArray] containing PBIJSON data. Each element in the array represents a line from the file.
+				</description>
+			</method>
+			<method name="open_from_string">
+				<return type="void" />
+				<param index="0" name="data" type="String" />
+				<description>
+					Loads data from a string containing PBIJSON data.
+				</description>
+			</method>
+			<method name="reload_file">
+				<return type="PreBuiltIndexJSONOutput" />
+				<description>
+					Reloads the file that was originally opened via [method open_file]. An error will be generated if the object is not currently loaded from a file.
+				</description>
+			</method>
+			<method name="remove_from_cache">
+				<return type="bool" />
+				<param index="0" name="flag" type="int" enum="CacheFlags" />
+				<param index="1" name="key_path" type="StringName" />
+				<description>
+					Removes a specific key from a specific cache. Returns [code]true[/code] if the key was found and successfully removed.
+				</description>
+			</method>
+			<method name="set_cache_enabled">
+				<return type="void" />
+				<param index="0" name="flag" type="int" enum="CacheFlags" />
+				<param index="1" name="enabled" type="bool" />
+				<description>
+					Sets whether the specified cache is enabled or disabled.
+				</description>
+			</method>
+			<method name="set_cache_flags">
+				<return type="void" />
+				<param index="0" name="flags" type="int" enum="CacheFlags" />
+				<description>
+					Sets the bitmask used to enable or disable specific caches.
+				</description>
+			</method>
+	</methods>
+	<members>
+		<member name="cache_flags" type="int" setter="set_cache_flags" getter="get_cache_flags" enum="CacheFlags" default="31">
+			A bitmask of flags to control which caches are active.
+		</member>
+	</members>
+	<constants>
+		<constant name="NONE" value="0" enum="CacheFlags">
+			No caches are enabled.
+		</constant>
+		<constant name="VALUE_CACHE" value="1" enum="CacheFlags">
+			Caches the output of [method get_value].
+		</constant>
+		<constant name="HAS_PATH_CACHE" value="2" enum="CacheFlags">
+			Caches the output of [method has_path].
+		</constant>
+		<constant name="GET_SIZE_CACHE" value="4" enum="CacheFlags">
+			Caches the output of [method get_size].
+		</constant>
+		<constant name="GET_SUBPATHS_CACHE" value="8" enum="CacheFlags">
+			Caches the output of [method get_sub_paths].
+		</constant>
+		<constant name="GET_KEYS_CACHE" value="16" enum="CacheFlags">
+			Caches the output of [method get_keys].
+		</constant>
+		<constant name="ALL" value="31" enum="CacheFlags">
+			All caches are enabled.
+		</constant>
+	</constants>
+</class>

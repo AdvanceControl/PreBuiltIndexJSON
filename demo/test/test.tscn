@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=3 uid="uid://cntytkkvuyfk1"]
+
+[ext_resource type="Script" uid="uid://c1rp2ihtal7h3" path="res://test/test.gd" id="1_syuel"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_syuel")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VSplitContainer"]
+layout_mode = 2
+
+[node name="JSON" type="VBoxContainer" parent="VSplitContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="Json" type="Label" parent="VSplitContainer/HSplitContainer/JSON"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "JSON Data"
+horizontal_alignment = 1
+
+[node name="JSONEdit" type="CodeEdit" parent="VSplitContainer/HSplitContainer/JSON"]
+custom_minimum_size = Vector2(320.785, 393.995)
+layout_mode = 2
+draw_tabs = true
+draw_spaces = true
+gutters_draw_bookmarks = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VSplitContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="Build" type="Button" parent="VSplitContainer/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+text = "—Build>"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="PBIJ" type="Label" parent="VSplitContainer/HSplitContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PBIJSON"
+horizontal_alignment = 1
+
+[node name="PBIJSONEdit" type="CodeEdit" parent="VSplitContainer/HSplitContainer/HSplitContainer/VBoxContainer"]
+custom_minimum_size = Vector2(320.785, 393.995)
+layout_mode = 2
+editable = false
+gutters_draw_line_numbers = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer/HSplitContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Mode" type="OptionButton" parent="VSplitContainer/HSplitContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(182.54, 0)
+layout_mode = 2
+selected = 0
+item_count = 5
+popup/item_0/text = "get_value"
+popup/item_0/id = 0
+popup/item_1/text = "get_keys"
+popup/item_1/id = 1
+popup/item_2/text = "get_size"
+popup/item_2/id = 2
+popup/item_3/text = "get_sub_paths"
+popup/item_3/id = 3
+popup/item_4/text = "has_path"
+popup/item_4/id = 4
+
+[node name="Path" type="LineEdit" parent="VSplitContainer/HSplitContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(312.33, 0)
+layout_mode = 2
+placeholder_text = "KeyPath"
+
+[node name="Button" type="Button" parent="VSplitContainer/HSplitContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Get"
+
+[node name="CheckBox" type="CheckBox" parent="VSplitContainer/HSplitContainer/HSplitContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Enable cache"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VSplitContainer"]
+layout_mode = 2
+bbcode_enabled = true
+scroll_following = true
+
+[connection signal="button_down" from="VSplitContainer/HSplitContainer/HSplitContainer/Build" to="." method="_on_build_button_down"]

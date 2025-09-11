@@ -1,0 +1,2987 @@
+{
+ "characters": {
+	"char_0000": {
+	  "class": "rogue",
+	  "hp": 808,
+	  "inventory": [
+		"item_0003",
+        "item_0012"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": "some_string"
+				}
+			  },
+			  "nested_key_4_1": {
+				"nested_key_5_0": null,
+				"nested_key_5_1": "some_string",
+				"nested_key_5_2": 0.652484476566315
+			  },
+			  "nested_key_4_2": true,
+			  "nested_key_4_3": "some_string"
+			}
+		  },
+		  "nested_key_2_1": {
+			"nested_key_3_0": 1,
+			"nested_key_3_1": {
+			  "nested_key_4_0": 1,
+			  "nested_key_4_1": "some_string"
+			}
+		  }
+		}
+	  },
+	  "name": "Character 0"
+	},
+	"char_0001": {
+	  "class": "rogue",
+	  "hp": 838,
+	  "inventory": [
+		"item_0001",
+        "item_0014"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": null
+		},
+		"nested_key_1_1": {
+		  "nested_key_2_0": 1,
+		  "nested_key_2_1": {
+			"nested_key_3_0": 1
+		  }
+		},
+		"nested_key_1_2": null,
+		"nested_key_1_3": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": 0.805137634277344,
+		  "nested_key_2_2": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": 1,
+			  "nested_key_4_1": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": null,
+				  "nested_key_6_1": null,
+				  "nested_key_6_2": 0.514194786548615
+				},
+				"nested_key_5_1": null,
+				"nested_key_5_2": null
+			  },
+			  "nested_key_4_2": null,
+			  "nested_key_4_3": 0.730738997459412
+			},
+			"nested_key_3_1": 0.443078964948654,
+			"nested_key_3_2": true,
+			"nested_key_3_3": {
+			  "nested_key_4_0": null
+			}
+		  },
+		  "nested_key_2_3": 0.517843008041382
+		}
+	  },
+	  "name": "Character 1"
+	},
+	"char_0002": {
+	  "class": "warrior",
+	  "hp": 449,
+	  "inventory": [
+		"item_0016",
+        "item_0010"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": {
+			"nested_key_3_0": 0.941373109817505
+		  }
+		},
+		"nested_key_1_1": 0.909859418869019
+	  },
+	  "name": "Character 2"
+	},
+	"char_0003": {
+	  "class": "warrior",
+	  "hp": 791,
+	  "inventory": [
+		"item_0001",
+        "item_0013"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": null,
+		  "nested_key_2_1": 1,
+		  "nested_key_2_2": "some_string",
+		  "nested_key_2_3": "some_string"
+		},
+		"nested_key_1_1": null,
+		"nested_key_1_2": null,
+		"nested_key_1_3": "some_string"
+	  },
+	  "name": "Character 3"
+	},
+	"char_0004": {
+	  "class": "rogue",
+	  "hp": 737,
+	  "inventory": [
+		"item_0023",
+        "item_0020"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.627296447753906,
+		"nested_key_1_1": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 1
+			  },
+			  "nested_key_4_1": {
+				"nested_key_5_0": 1,
+				"nested_key_5_1": null,
+				"nested_key_5_2": {
+				  "nested_key_6_0": null,
+				  "nested_key_6_1": null,
+				  "nested_key_6_2": 0.334704965353012,
+				  "nested_key_6_3": null
+				}
+			  },
+			  "nested_key_4_2": 0.402570426464081,
+			  "nested_key_4_3": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": "some_string",
+				  "nested_key_6_1": {
+					"nested_key_7_0": {
+					  "nested_key_8_0": 1,
+					  "nested_key_8_1": null
+					},
+					"nested_key_7_1": true,
+					"nested_key_7_2": true
+				  },
+				  "nested_key_6_2": "some_string"
+				},
+				"nested_key_5_1": 1,
+				"nested_key_5_2": true,
+				"nested_key_5_3": null
+			  }
+			},
+			"nested_key_3_1": 1,
+			"nested_key_3_2": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 1
+			  },
+			  "nested_key_4_1": 0.221946462988853
+			},
+			"nested_key_3_3": {
+			  "nested_key_4_0": null
+			}
+		  },
+		  "nested_key_2_2": 1,
+		  "nested_key_2_3": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": true,
+			  "nested_key_4_1": 1,
+			  "nested_key_4_2": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": 1,
+				  "nested_key_6_1": null,
+				  "nested_key_6_2": "some_string",
+				  "nested_key_6_3": {
+					"nested_key_7_0": 1,
+					"nested_key_7_1": true,
+					"nested_key_7_2": 0.120179936289787
+				  }
+				},
+				"nested_key_5_1": true,
+				"nested_key_5_2": 1,
+				"nested_key_5_3": null
+			  }
+			}
+		  }
+		}
+	  },
+	  "name": "Character 4"
+	},
+	"char_0005": {
+	  "class": "mage",
+	  "hp": 990,
+	  "inventory": [
+		"item_0014",
+        "item_0012"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.762053966522217,
+		"nested_key_1_1": 0.90754109621048,
+		"nested_key_1_2": 1,
+		"nested_key_1_3": 1
+	  },
+	  "name": "Character 5"
+	},
+	"char_0006": {
+	  "class": "rogue",
+	  "hp": 440,
+	  "inventory": [
+		"item_0017",
+        "item_0006"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": {
+		  "nested_key_2_0": 1,
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": {
+			"nested_key_3_0": 1,
+			"nested_key_3_1": null,
+			"nested_key_3_2": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": true,
+				"nested_key_5_1": true
+			  },
+			  "nested_key_4_1": 1,
+			  "nested_key_4_2": true
+			},
+			"nested_key_3_3": 0.672335803508759
+		  },
+		  "nested_key_2_3": "some_string"
+		},
+		"nested_key_1_2": 1
+	  },
+	  "name": "Character 6"
+	},
+	"char_0007": {
+	  "class": "mage",
+	  "hp": 979,
+	  "inventory": [
+		"item_0011",
+        "item_0017"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.477759599685669,
+		"nested_key_1_1": "some_string",
+		"nested_key_1_2": {
+		  "nested_key_2_0": 1,
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": {
+			"nested_key_3_0": 1
+		  },
+		  "nested_key_2_3": {
+			"nested_key_3_0": true,
+			"nested_key_3_1": "some_string",
+			"nested_key_3_2": {
+			  "nested_key_4_0": 1
+			}
+		  }
+		},
+		"nested_key_1_3": true
+	  },
+	  "name": "Character 7"
+	},
+	"char_0008": {
+	  "class": "mage",
+	  "hp": 889,
+	  "inventory": [
+		"item_0016",
+        "item_0004"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": true
+		},
+		"nested_key_1_1": 0.106675162911415,
+		"nested_key_1_2": 0.303009152412415,
+		"nested_key_1_3": {
+		  "nested_key_2_0": "some_string",
+		  "nested_key_2_1": null
+		}
+	  },
+	  "name": "Character 8"
+	},
+	"char_0009": {
+	  "class": "rogue",
+	  "hp": 641,
+	  "inventory": [
+		"item_0005",
+        "item_0014"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": 1,
+		  "nested_key_2_2": null,
+		  "nested_key_2_3": 1
+		},
+		"nested_key_1_1": {
+		  "nested_key_2_0": 1,
+		  "nested_key_2_1": 1,
+		  "nested_key_2_2": 0.858403921127319
+		}
+	  },
+	  "name": "Character 9"
+	},
+	"char_0010": {
+	  "class": "warrior",
+	  "hp": 416,
+	  "inventory": [
+		"item_0022",
+        "item_0014"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true,
+		"nested_key_1_1": null,
+		"nested_key_1_2": 1,
+		"nested_key_1_3": 1
+	  },
+	  "name": "Character 10"
+	},
+	"char_0011": {
+	  "class": "rogue",
+	  "hp": 123,
+	  "inventory": [
+		"item_0014",
+        "item_0011"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": "some_string"
+		}
+	  },
+	  "name": "Character 11"
+	},
+	"char_0012": {
+	  "class": "mage",
+	  "hp": 901,
+	  "inventory": [
+		"item_0002",
+        "item_0020"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true,
+		"nested_key_1_1": 0.387445658445358,
+		"nested_key_1_2": {
+		  "nested_key_2_0": "some_string",
+		  "nested_key_2_1": {
+			"nested_key_3_0": true
+		  },
+		  "nested_key_2_2": {
+			"nested_key_3_0": null,
+			"nested_key_3_1": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": "some_string",
+				"nested_key_5_1": 1,
+				"nested_key_5_2": {
+				  "nested_key_6_0": {
+					"nested_key_7_0": null,
+					"nested_key_7_1": true,
+					"nested_key_7_2": null
+				  }
+				},
+				"nested_key_5_3": true
+			  }
+			},
+			"nested_key_3_2": "some_string",
+			"nested_key_3_3": true
+		  },
+		  "nested_key_2_3": true
+		},
+		"nested_key_1_3": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": true,
+			"nested_key_3_1": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": null
+			  },
+			  "nested_key_4_1": "some_string",
+			  "nested_key_4_2": {
+				"nested_key_5_0": "some_string",
+				"nested_key_5_1": 0.931232810020447,
+				"nested_key_5_2": "some_string",
+				"nested_key_5_3": "some_string"
+			  }
+			},
+			"nested_key_3_2": null
+		  },
+		  "nested_key_2_1": "some_string",
+		  "nested_key_2_2": 1,
+		  "nested_key_2_3": "some_string"
+		}
+	  },
+	  "name": "Character 12"
+	},
+	"char_0013": {
+	  "class": "mage",
+	  "hp": 861,
+	  "inventory": [
+		"item_0012",
+        "item_0000"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": {
+		  "nested_key_2_0": null,
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": 1
+		}
+	  },
+	  "name": "Character 13"
+	},
+	"char_0014": {
+	  "class": "rogue",
+	  "hp": 353,
+	  "inventory": [
+		"item_0005",
+        "item_0020"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": "some_string",
+		"nested_key_1_1": 0.4220350086689,
+		"nested_key_1_2": {
+		  "nested_key_2_0": 0.553074479103088,
+		  "nested_key_2_1": {
+			"nested_key_3_0": "some_string",
+			"nested_key_3_1": true,
+			"nested_key_3_2": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 1,
+				"nested_key_5_1": "some_string",
+				"nested_key_5_2": null,
+				"nested_key_5_3": {
+				  "nested_key_6_0": {
+					"nested_key_7_0": {
+					  "nested_key_8_0": true,
+					  "nested_key_8_1": "some_string",
+					  "nested_key_8_2": 0.801788449287415,
+					  "nested_key_8_3": "some_string"
+					},
+					"nested_key_7_1": {
+					  "nested_key_8_0": "some_string"
+					},
+					"nested_key_7_2": {
+					  "nested_key_8_0": 1
+					},
+					"nested_key_7_3": null
+				  },
+				  "nested_key_6_1": true,
+				  "nested_key_6_2": null,
+				  "nested_key_6_3": null
+				}
+			  }
+			},
+			"nested_key_3_3": 1
+		  },
+		  "nested_key_2_2": 0.302805095911026,
+		  "nested_key_2_3": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": 0.899373471736908,
+			  "nested_key_4_1": "some_string"
+			}
+		  }
+		},
+		"nested_key_1_3": {
+		  "nested_key_2_0": 0.917889356613159,
+		  "nested_key_2_1": {
+			"nested_key_3_0": 0.879546225070953,
+			"nested_key_3_1": {
+			  "nested_key_4_0": true,
+			  "nested_key_4_1": {
+				"nested_key_5_0": 1
+			  }
+			}
+		  },
+		  "nested_key_2_2": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": null,
+			  "nested_key_4_1": 1
+			},
+			"nested_key_3_1": {
+			  "nested_key_4_0": 0.300694108009338
+			},
+			"nested_key_3_2": {
+			  "nested_key_4_0": 0.95144122838974,
+			  "nested_key_4_1": "some_string",
+			  "nested_key_4_2": 0.548204123973846
+			},
+			"nested_key_3_3": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 0.449095875024796
+			  },
+			  "nested_key_4_1": "some_string",
+			  "nested_key_4_2": "some_string",
+			  "nested_key_4_3": true
+			}
+		  },
+		  "nested_key_2_3": 1
+		}
+	  },
+	  "name": "Character 14"
+	},
+	"char_0015": {
+	  "class": "mage",
+	  "hp": 483,
+	  "inventory": [
+		"item_0001",
+        "item_0024"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.548729598522186,
+		"nested_key_1_1": {
+		  "nested_key_2_0": null,
+		  "nested_key_2_1": 1,
+		  "nested_key_2_2": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": true
+			},
+			"nested_key_3_1": true,
+			"nested_key_3_2": null,
+			"nested_key_3_3": 1
+		  },
+		  "nested_key_2_3": 0.444201946258545
+		},
+		"nested_key_1_2": "some_string",
+		"nested_key_1_3": true
+	  },
+	  "name": "Character 15"
+	},
+	"char_0016": {
+	  "class": "mage",
+	  "hp": 857,
+	  "inventory": [
+		"item_0022",
+        "item_0015"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": {
+			"nested_key_3_0": 0.731394231319427,
+			"nested_key_3_1": "some_string",
+			"nested_key_3_2": 1
+		  },
+		  "nested_key_2_2": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": null,
+				"nested_key_5_1": null,
+				"nested_key_5_2": 1
+			  }
+			},
+			"nested_key_3_1": "some_string",
+			"nested_key_3_2": "some_string"
+		  }
+		},
+		"nested_key_1_1": true,
+		"nested_key_1_2": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": 0.359245926141739,
+			  "nested_key_4_1": 1,
+			  "nested_key_4_2": 0.13642118871212
+			}
+		  },
+		  "nested_key_2_1": {
+			"nested_key_3_0": true,
+			"nested_key_3_1": 1,
+			"nested_key_3_2": true,
+			"nested_key_3_3": true
+		  },
+		  "nested_key_2_2": 0.782073676586151,
+		  "nested_key_2_3": 1
+		},
+		"nested_key_1_3": 0.926095366477966
+	  },
+	  "name": "Character 16"
+	},
+	"char_0017": {
+	  "class": "mage",
+	  "hp": 485,
+	  "inventory": [
+		"item_0003",
+        "item_0001"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true,
+		"nested_key_1_1": null
+	  },
+	  "name": "Character 17"
+	},
+	"char_0018": {
+	  "class": "rogue",
+	  "hp": 620,
+	  "inventory": [
+		"item_0005",
+        "item_0018"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": "some_string",
+		"nested_key_1_1": 1
+	  },
+	  "name": "Character 18"
+	},
+	"char_0019": {
+	  "class": "rogue",
+	  "hp": 693,
+	  "inventory": [
+		"item_0009",
+        "item_0007"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": "some_string",
+		"nested_key_1_2": {
+		  "nested_key_2_0": 0.659318208694458,
+		  "nested_key_2_1": true
+		},
+		"nested_key_1_3": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": 1
+		  },
+		  "nested_key_2_1": "some_string"
+		}
+	  },
+	  "name": "Character 19"
+	},
+	"char_0020": {
+	  "class": "warrior",
+	  "hp": 547,
+	  "inventory": [
+		"item_0009",
+        "item_0009"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.106518320739269,
+		"nested_key_1_1": "some_string",
+		"nested_key_1_2": {
+		  "nested_key_2_0": "some_string"
+		}
+	  },
+	  "name": "Character 20"
+	},
+	"char_0021": {
+	  "class": "rogue",
+	  "hp": 207,
+	  "inventory": [
+		"item_0006",
+        "item_0018"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": 0.593636274337769
+		},
+		"nested_key_1_1": {
+		  "nested_key_2_0": 0.929564774036407,
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": "some_string"
+		},
+		"nested_key_1_2": {
+		  "nested_key_2_0": "some_string",
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": {
+			"nested_key_3_0": 1,
+			"nested_key_3_1": null
+		  }
+		}
+	  },
+	  "name": "Character 21"
+	},
+	"char_0022": {
+	  "class": "mage",
+	  "hp": 629,
+	  "inventory": [
+		"item_0018",
+        "item_0007"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": "some_string",
+				  "nested_key_6_1": null
+				},
+				"nested_key_5_1": "some_string"
+			  },
+			  "nested_key_4_1": true,
+			  "nested_key_4_2": {
+				"nested_key_5_0": null,
+				"nested_key_5_1": 1
+			  },
+			  "nested_key_4_3": {
+				"nested_key_5_0": "some_string"
+			  }
+			},
+			"nested_key_3_1": {
+			  "nested_key_4_0": true,
+			  "nested_key_4_1": 0.288589745759964,
+			  "nested_key_4_2": true
+			},
+			"nested_key_3_2": 1
+		  },
+		  "nested_key_2_1": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": null,
+			  "nested_key_4_1": true
+			},
+			"nested_key_3_1": {
+			  "nested_key_4_0": 0.248316287994385,
+			  "nested_key_4_1": true
+			}
+		  },
+		  "nested_key_2_2": true,
+		  "nested_key_2_3": 1
+		},
+		"nested_key_1_2": "some_string",
+		"nested_key_1_3": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": 1
+		  }
+		}
+	  },
+	  "name": "Character 22"
+	},
+	"char_0023": {
+	  "class": "rogue",
+	  "hp": 631,
+	  "inventory": [
+		"item_0016",
+        "item_0009"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": null
+	  },
+	  "name": "Character 23"
+	},
+	"char_0024": {
+	  "class": "rogue",
+	  "hp": 253,
+	  "inventory": [
+		"item_0010",
+        "item_0010"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": null,
+			  "nested_key_4_1": 0.604058265686035
+			},
+			"nested_key_3_1": null,
+			"nested_key_3_2": 0.934413313865662,
+			"nested_key_3_3": null
+		  }
+		},
+		"nested_key_1_1": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": true
+			},
+			"nested_key_3_1": true,
+			"nested_key_3_2": 1,
+			"nested_key_3_3": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": null
+			  },
+			  "nested_key_4_1": {
+				"nested_key_5_0": true,
+				"nested_key_5_1": {
+				  "nested_key_6_0": 0.0930844619870186,
+				  "nested_key_6_1": 1
+				},
+				"nested_key_5_2": 0.483039736747742
+			  }
+			}
+		  },
+		  "nested_key_2_1": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 1,
+				"nested_key_5_1": 1,
+				"nested_key_5_2": 1
+			  },
+			  "nested_key_4_1": true,
+			  "nested_key_4_2": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": "some_string",
+				  "nested_key_6_1": 0.00852787774056196,
+				  "nested_key_6_2": null
+				},
+				"nested_key_5_1": 1,
+				"nested_key_5_2": 1,
+				"nested_key_5_3": null
+			  },
+			  "nested_key_4_3": 1
+			},
+			"nested_key_3_1": 1,
+			"nested_key_3_2": 0.236079305410385,
+			"nested_key_3_3": 1
+		  },
+		  "nested_key_2_2": null
+		},
+		"nested_key_1_2": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": true
+				},
+				"nested_key_5_1": {
+				  "nested_key_6_0": {
+					"nested_key_7_0": 0.0876692235469818
+				  },
+				  "nested_key_6_1": 0.159659862518311
+				}
+			  }
+			},
+			"nested_key_3_1": 1,
+			"nested_key_3_2": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 1,
+				"nested_key_5_1": null
+			  },
+			  "nested_key_4_1": {
+				"nested_key_5_0": 1,
+				"nested_key_5_1": {
+				  "nested_key_6_0": 0.570210874080658,
+				  "nested_key_6_1": "some_string",
+				  "nested_key_6_2": {
+					"nested_key_7_0": "some_string",
+					"nested_key_7_1": 0.448764234781265
+				  },
+				  "nested_key_6_3": {
+					"nested_key_7_0": null
+				  }
+				}
+			  },
+			  "nested_key_4_2": "some_string"
+			}
+		  },
+		  "nested_key_2_1": "some_string"
+		}
+	  },
+	  "name": "Character 24"
+	},
+	"char_0025": {
+	  "class": "warrior",
+	  "hp": 737,
+	  "inventory": [
+		"item_0016",
+        "item_0021"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": 1
+	  },
+	  "name": "Character 25"
+	},
+	"char_0026": {
+	  "class": "mage",
+	  "hp": 491,
+	  "inventory": [
+		"item_0015",
+        "item_0017"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.116914346814156,
+		"nested_key_1_1": 0.694650828838348
+	  },
+	  "name": "Character 26"
+	},
+	"char_0027": {
+	  "class": "rogue",
+	  "hp": 638,
+	  "inventory": [
+		"item_0010",
+        "item_0018"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": "some_string",
+		  "nested_key_2_1": 1
+		},
+		"nested_key_1_1": null
+	  },
+	  "name": "Character 27"
+	},
+	"char_0028": {
+	  "class": "rogue",
+	  "hp": 219,
+	  "inventory": [
+		"item_0021",
+        "item_0004"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": 0.197215393185616,
+		  "nested_key_2_1": 1,
+		  "nested_key_2_2": 0.843894124031067,
+		  "nested_key_2_3": 0.777845442295074
+		},
+		"nested_key_1_1": "some_string",
+		"nested_key_1_2": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": {
+			"nested_key_3_0": true,
+			"nested_key_3_1": {
+			  "nested_key_4_0": true
+			}
+		  },
+		  "nested_key_2_2": {
+			"nested_key_3_0": 0.518885910511017,
+			"nested_key_3_1": 1,
+			"nested_key_3_2": null
+		  },
+		  "nested_key_2_3": null
+		}
+	  },
+	  "name": "Character 28"
+	},
+	"char_0029": {
+	  "class": "rogue",
+	  "hp": 564,
+	  "inventory": [
+		"item_0004",
+        "item_0015"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": null
+	  },
+	  "name": "Character 29"
+	},
+	"char_0030": {
+	  "class": "mage",
+	  "hp": 463,
+	  "inventory": [
+		"item_0011",
+        "item_0022"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": true
+		  },
+		  "nested_key_2_1": null,
+		  "nested_key_2_2": "some_string"
+		}
+	  },
+	  "name": "Character 30"
+	},
+	"char_0031": {
+	  "class": "rogue",
+	  "hp": 862,
+	  "inventory": [
+		"item_0023",
+        "item_0011"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1
+	  },
+	  "name": "Character 31"
+	},
+	"char_0032": {
+	  "class": "warrior",
+	  "hp": 770,
+	  "inventory": [
+		"item_0009",
+        "item_0016"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": null,
+			  "nested_key_4_1": true
+			},
+			"nested_key_3_1": "some_string",
+			"nested_key_3_2": 0.525390088558197
+		  },
+		  "nested_key_2_1": {
+			"nested_key_3_0": true,
+			"nested_key_3_1": true,
+			"nested_key_3_2": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 1,
+				"nested_key_5_1": null
+			  },
+			  "nested_key_4_1": true,
+			  "nested_key_4_2": 1,
+			  "nested_key_4_3": "some_string"
+			}
+		  },
+		  "nested_key_2_2": {
+			"nested_key_3_0": 1,
+			"nested_key_3_1": null,
+			"nested_key_3_2": 1,
+			"nested_key_3_3": true
+		  }
+		}
+	  },
+	  "name": "Character 32"
+	},
+	"char_0033": {
+	  "class": "mage",
+	  "hp": 262,
+	  "inventory": [
+		"item_0013",
+        "item_0012"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.859300076961517,
+		"nested_key_1_1": true,
+		"nested_key_1_2": 0.737332105636597,
+		"nested_key_1_3": null
+	  },
+	  "name": "Character 33"
+	},
+	"char_0034": {
+	  "class": "rogue",
+	  "hp": 795,
+	  "inventory": [
+		"item_0015",
+        "item_0010"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": {
+		  "nested_key_2_0": null,
+		  "nested_key_2_1": "some_string",
+		  "nested_key_2_2": {
+			"nested_key_3_0": 1,
+			"nested_key_3_1": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 0.0769297853112221
+			  },
+			  "nested_key_4_1": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": {
+					"nested_key_7_0": {
+					  "nested_key_8_0": null,
+					  "nested_key_8_1": null
+					}
+				  },
+				  "nested_key_6_1": {
+					"nested_key_7_0": {
+					  "nested_key_8_0": true,
+					  "nested_key_8_1": 0.622522175312042,
+					  "nested_key_8_2": "some_string",
+					  "nested_key_8_3": 0.119628980755806
+					},
+					"nested_key_7_1": 1,
+					"nested_key_7_2": true,
+					"nested_key_7_3": null
+				  }
+				},
+				"nested_key_5_1": 0.34719318151474,
+				"nested_key_5_2": true,
+				"nested_key_5_3": null
+			  }
+			}
+		  },
+		  "nested_key_2_3": {
+			"nested_key_3_0": null,
+			"nested_key_3_1": "some_string",
+			"nested_key_3_2": true,
+			"nested_key_3_3": "some_string"
+		  }
+		}
+	  },
+	  "name": "Character 34"
+	},
+	"char_0035": {
+	  "class": "warrior",
+	  "hp": 567,
+	  "inventory": [
+		"item_0022",
+        "item_0001"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": null
+		},
+		"nested_key_1_1": 0.810013473033905,
+		"nested_key_1_2": true,
+		"nested_key_1_3": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": true,
+			"nested_key_3_1": true,
+			"nested_key_3_2": {
+			  "nested_key_4_0": null,
+			  "nested_key_4_1": 1,
+			  "nested_key_4_2": 0.193770736455917,
+			  "nested_key_4_3": {
+				"nested_key_5_0": "some_string",
+				"nested_key_5_1": "some_string",
+				"nested_key_5_2": 0.643382608890533
+			  }
+			},
+			"nested_key_3_3": null
+		  },
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": true,
+				  "nested_key_6_1": "some_string"
+				},
+				"nested_key_5_1": {
+				  "nested_key_6_0": true
+				},
+				"nested_key_5_2": 1,
+				"nested_key_5_3": null
+			  },
+			  "nested_key_4_1": "some_string"
+			},
+			"nested_key_3_1": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": 0.0885380357503891
+				},
+				"nested_key_5_1": null
+			  }
+			},
+			"nested_key_3_2": {
+			  "nested_key_4_0": 0.79126101732254,
+			  "nested_key_4_1": {
+				"nested_key_5_0": true
+			  },
+			  "nested_key_4_2": {
+				"nested_key_5_0": true
+			  }
+			}
+		  },
+		  "nested_key_2_3": 0.297572761774063
+		}
+	  },
+	  "name": "Character 35"
+	},
+	"char_0036": {
+	  "class": "warrior",
+	  "hp": 659,
+	  "inventory": [
+		"item_0003",
+        "item_0018"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.18753819167614,
+		"nested_key_1_1": true
+	  },
+	  "name": "Character 36"
+	},
+	"char_0037": {
+	  "class": "warrior",
+	  "hp": 885,
+	  "inventory": [
+		"item_0013",
+        "item_0008"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": "some_string",
+		"nested_key_1_1": 0.222329959273338
+	  },
+	  "name": "Character 37"
+	},
+	"char_0038": {
+	  "class": "rogue",
+	  "hp": 661,
+	  "inventory": [
+		"item_0003",
+        "item_0012"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true,
+		"nested_key_1_1": null
+	  },
+	  "name": "Character 38"
+	},
+	"char_0039": {
+	  "class": "warrior",
+	  "hp": 536,
+	  "inventory": [
+		"item_0023",
+        "item_0000"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": "some_string",
+		"nested_key_1_1": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": "some_string"
+		  },
+		  "nested_key_2_1": {
+			"nested_key_3_0": true
+		  },
+		  "nested_key_2_2": true,
+		  "nested_key_2_3": 1
+		},
+		"nested_key_1_2": null,
+		"nested_key_1_3": true
+	  },
+	  "name": "Character 39"
+	},
+	"char_0040": {
+	  "class": "rogue",
+	  "hp": 153,
+	  "inventory": [
+		"item_0023",
+        "item_0020"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": null,
+			"nested_key_3_1": 1
+		  },
+		  "nested_key_2_1": {
+			"nested_key_3_0": "some_string",
+			"nested_key_3_1": "some_string",
+			"nested_key_3_2": {
+			  "nested_key_4_0": null,
+			  "nested_key_4_1": 1,
+			  "nested_key_4_2": 1,
+			  "nested_key_4_3": 0.514888823032379
+			},
+			"nested_key_3_3": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": "some_string",
+				  "nested_key_6_1": true,
+				  "nested_key_6_2": 0.319223970174789
+				},
+				"nested_key_5_1": true,
+				"nested_key_5_2": 0.223731383681297
+			  },
+			  "nested_key_4_1": "some_string",
+			  "nested_key_4_2": {
+				"nested_key_5_0": 0.607432305812836,
+				"nested_key_5_1": 0.21382312476635,
+				"nested_key_5_2": {
+				  "nested_key_6_0": "some_string",
+				  "nested_key_6_1": 1,
+				  "nested_key_6_2": 1
+				}
+			  }
+			}
+		  },
+		  "nested_key_2_2": 0.0144967157393694,
+		  "nested_key_2_3": {
+			"nested_key_3_0": 0.0277746021747589,
+			"nested_key_3_1": 1
+		  }
+		}
+	  },
+	  "name": "Character 40"
+	},
+	"char_0041": {
+	  "class": "warrior",
+	  "hp": 639,
+	  "inventory": [
+		"item_0002",
+        "item_0019"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true,
+		"nested_key_1_1": true
+	  },
+	  "name": "Character 41"
+	},
+	"char_0042": {
+	  "class": "warrior",
+	  "hp": 914,
+	  "inventory": [
+		"item_0016",
+        "item_0023"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.0779445394873619,
+		"nested_key_1_1": 0.508723914623261,
+		"nested_key_1_2": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": "some_string",
+			"nested_key_3_1": {
+			  "nested_key_4_0": true
+			},
+			"nested_key_3_2": 0.217291295528412,
+			"nested_key_3_3": null
+		  },
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": null
+			}
+		  }
+		},
+		"nested_key_1_3": 0.926100015640259
+	  },
+	  "name": "Character 42"
+	},
+	"char_0043": {
+	  "class": "warrior",
+	  "hp": 847,
+	  "inventory": [
+		"item_0006",
+        "item_0016"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": {
+		  "nested_key_2_0": "some_string",
+		  "nested_key_2_1": true,
+		  "nested_key_2_2": 1
+		}
+	  },
+	  "name": "Character 43"
+	},
+	"char_0044": {
+	  "class": "mage",
+	  "hp": 177,
+	  "inventory": [
+		"item_0002",
+        "item_0003"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": {
+					"nested_key_7_0": 0.586573421955109,
+					"nested_key_7_1": {
+					  "nested_key_8_0": 1,
+					  "nested_key_8_1": true
+					},
+					"nested_key_7_2": 0.422775387763977,
+					"nested_key_7_3": {
+					  "nested_key_8_0": true,
+					  "nested_key_8_1": true,
+					  "nested_key_8_2": 0.198369309306145
+					}
+				  },
+				  "nested_key_6_1": 0.42028796672821,
+				  "nested_key_6_2": {
+					"nested_key_7_0": "some_string"
+				  },
+				  "nested_key_6_3": true
+				},
+				"nested_key_5_1": 1,
+				"nested_key_5_2": "some_string"
+			  },
+			  "nested_key_4_1": null,
+			  "nested_key_4_2": "some_string"
+			},
+			"nested_key_3_1": null,
+			"nested_key_3_2": {
+			  "nested_key_4_0": 0.229834526777267,
+			  "nested_key_4_1": 1,
+			  "nested_key_4_2": true
+			},
+			"nested_key_3_3": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": 0.823998391628265,
+				  "nested_key_6_1": null,
+				  "nested_key_6_2": null
+				},
+				"nested_key_5_1": 0.594830870628357,
+				"nested_key_5_2": 1,
+				"nested_key_5_3": {
+				  "nested_key_6_0": {
+					"nested_key_7_0": {
+					  "nested_key_8_0": 1,
+					  "nested_key_8_1": true,
+					  "nested_key_8_2": null
+					},
+					"nested_key_7_1": true
+				  },
+				  "nested_key_6_1": true
+				}
+			  }
+			}
+		  },
+		  "nested_key_2_1": 0.0869137048721313,
+		  "nested_key_2_2": true
+		},
+		"nested_key_1_2": true
+	  },
+	  "name": "Character 44"
+	},
+	"char_0045": {
+	  "class": "mage",
+	  "hp": 591,
+	  "inventory": [
+		"item_0015",
+        "item_0004"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.610606729984283,
+		"nested_key_1_1": 1,
+		"nested_key_1_2": {
+		  "nested_key_2_0": 0.458385616540909,
+		  "nested_key_2_1": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": 1,
+			  "nested_key_4_1": 1,
+			  "nested_key_4_2": 1
+			},
+			"nested_key_3_1": 1,
+			"nested_key_3_2": 1
+		  },
+		  "nested_key_2_2": true,
+		  "nested_key_2_3": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": {
+				"nested_key_5_0": 1,
+				"nested_key_5_1": 0.588733673095703,
+				"nested_key_5_2": true,
+				"nested_key_5_3": "some_string"
+			  },
+			  "nested_key_4_1": true,
+			  "nested_key_4_2": null,
+			  "nested_key_4_3": {
+				"nested_key_5_0": {
+				  "nested_key_6_0": null,
+				  "nested_key_6_1": true
+				},
+				"nested_key_5_1": {
+				  "nested_key_6_0": 1,
+				  "nested_key_6_1": {
+					"nested_key_7_0": 1
+				  }
+				},
+				"nested_key_5_2": 0.56324166059494
+			  }
+			},
+			"nested_key_3_1": "some_string",
+			"nested_key_3_2": true
+		  }
+		}
+	  },
+	  "name": "Character 45"
+	},
+	"char_0046": {
+	  "class": "mage",
+	  "hp": 713,
+	  "inventory": [
+		"item_0005",
+        "item_0000"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": null,
+		"nested_key_1_1": "some_string"
+	  },
+	  "name": "Character 46"
+	},
+	"char_0047": {
+	  "class": "rogue",
+	  "hp": 149,
+	  "inventory": [
+		"item_0001",
+        "item_0001"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1
+	  },
+	  "name": "Character 47"
+	},
+	"char_0048": {
+	  "class": "rogue",
+	  "hp": 287,
+	  "inventory": [
+		"item_0024",
+        "item_0019"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true,
+		"nested_key_1_1": 1,
+		"nested_key_1_2": 1,
+		"nested_key_1_3": 1
+	  },
+	  "name": "Character 48"
+	},
+	"char_0049": {
+	  "class": "mage",
+	  "hp": 589,
+	  "inventory": [
+		"item_0018",
+        "item_0009"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": "some_string",
+			  "nested_key_4_1": null,
+			  "nested_key_4_2": 1
+			},
+			"nested_key_3_1": {
+			  "nested_key_4_0": 0.352142661809921
+			}
+		  },
+		  "nested_key_2_1": "some_string",
+		  "nested_key_2_2": {
+			"nested_key_3_0": 0.767075061798096
+		  },
+		  "nested_key_2_3": {
+			"nested_key_3_0": true,
+			"nested_key_3_1": "some_string",
+			"nested_key_3_2": "some_string"
+		  }
+		},
+		"nested_key_1_1": null,
+		"nested_key_1_2": "some_string"
+	  },
+	  "name": "Character 49"
+	},
+	"char_0050": {
+	  "class": "warrior",
+	  "hp": 714,
+	  "inventory": [
+		"item_0006",
+        "item_0007"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true,
+		"nested_key_1_1": true,
+		"nested_key_1_2": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": "some_string",
+		  "nested_key_2_2": 1,
+		  "nested_key_2_3": 1
+		},
+		"nested_key_1_3": 1
+	  },
+	  "name": "Character 50"
+	},
+	"char_0051": {
+	  "class": "rogue",
+	  "hp": 151,
+	  "inventory": [
+		"item_0023",
+        "item_0024"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": null,
+		"nested_key_1_1": 1,
+		"nested_key_1_2": 0.492731481790543,
+		"nested_key_1_3": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": {
+			  "nested_key_4_0": "some_string",
+			  "nested_key_4_1": null,
+			  "nested_key_4_2": "some_string"
+			},
+			"nested_key_3_1": null
+		  }
+		}
+	  },
+	  "name": "Character 51"
+	},
+	"char_0052": {
+	  "class": "warrior",
+	  "hp": 381,
+	  "inventory": [
+		"item_0007",
+        "item_0004"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": {
+		  "nested_key_2_0": true,
+		  "nested_key_2_1": "some_string",
+		  "nested_key_2_2": "some_string",
+		  "nested_key_2_3": 0.15290530025959
+		},
+		"nested_key_1_1": true
+	  },
+	  "name": "Character 52"
+	},
+	"char_0053": {
+	  "class": "warrior",
+	  "hp": 516,
+	  "inventory": [
+		"item_0018",
+        "item_0021"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 0.693280696868896,
+		"nested_key_1_1": {
+		  "nested_key_2_0": {
+			"nested_key_3_0": 1,
+			"nested_key_3_1": {
+			  "nested_key_4_0": true,
+			  "nested_key_4_1": true,
+			  "nested_key_4_2": "some_string"
+			}
+		  },
+		  "nested_key_2_1": null,
+		  "nested_key_2_2": 1
+		},
+		"nested_key_1_2": null
+	  },
+	  "name": "Character 53"
+	},
+	"char_0054": {
+	  "class": "mage",
+	  "hp": 283,
+	  "inventory": [
+		"item_0003",
+        "item_0012"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true
+	  },
+	  "name": "Character 54"
+	},
+	"char_0055": {
+	  "class": "warrior",
+	  "hp": 301,
+	  "inventory": [
+		"item_0012",
+        "item_0010"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true
+	  },
+	  "name": "Character 55"
+	},
+	"char_0056": {
+	  "class": "rogue",
+	  "hp": 624,
+	  "inventory": [
+		"item_0019",
+        "item_0024"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1
+	  },
+	  "name": "Character 56"
+	},
+	"char_0057": {
+	  "class": "rogue",
+	  "hp": 948,
+	  "inventory": [
+		"item_0019",
+        "item_0020"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": true,
+		"nested_key_1_1": 1,
+		"nested_key_1_2": "some_string",
+		"nested_key_1_3": 1
+	  },
+	  "name": "Character 57"
+	},
+	"char_0058": {
+	  "class": "mage",
+	  "hp": 510,
+	  "inventory": [
+		"item_0007",
+        "item_0009"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": 1,
+		"nested_key_1_1": 0.464479714632034,
+		"nested_key_1_2": 0.851826608181
+	  },
+	  "name": "Character 58"
+	},
+	"char_0059": {
+	  "class": "mage",
+	  "hp": 734,
+	  "inventory": [
+		"item_0006",
+        "item_0012"
+	  ],
+	  "metadata": {
+		"nested_key_1_0": "some_string",
+		"nested_key_1_1": "some_string",
+		"nested_key_1_2": "some_string",
+		"nested_key_1_3": null
+	  },
+	  "name": "Character 59"
+	}
+  },
+  "config": {
+	"auto_save": true,
+	"last_user": null,
+	"version": 1.2
+  },
+  "items": [
+	{
+	  "damage": 5,
+	  "id": "item_0000",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 0",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.951508104801178,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 5,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "poison",
+		"requires_level": 46
+	  },
+	  "type": "sword",
+	  "weight": 12.5092483220233
+	},
+	{
+	  "damage": 9,
+	  "id": "item_0001",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 1",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.668056964874268,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 5,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "ice",
+		"requires_level": 54
+	  },
+	  "type": "magic",
+	  "weight": 14.6451663035146
+	},
+	{
+	  "damage": 11,
+	  "id": "item_0002",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 2",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.299591809511185,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 2,
+			"id": "effect_slow"
+		  }
+		],
+		"element": null,
+		"requires_level": 1
+	  },
+	  "type": "sword",
+	  "weight": 7.67959336879674
+	},
+	{
+	  "damage": 32,
+	  "id": "item_0003",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 3",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.6922367811203,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 5,
+			"id": "effect_slow"
+		  }
+		],
+		"element": null,
+		"requires_level": 50
+	  },
+	  "type": "magic",
+	  "weight": 9.97366585219572
+	},
+	{
+	  "damage": 40,
+	  "id": "item_0004",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 4",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.270355701446533,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 2,
+			"id": "effect_slow"
+		  }
+		],
+		"element": null,
+		"requires_level": 82
+	  },
+	  "type": "magic",
+	  "weight": 14.9909537040372
+	},
+	{
+	  "damage": 45,
+	  "id": "item_0005",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 5",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.258339941501617,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 3,
+			"id": "effect_slow"
+		  }
+		],
+		"element": null,
+		"requires_level": 73
+	  },
+	  "type": "sword",
+	  "weight": 2.81242797913707
+	},
+	{
+	  "damage": 46,
+	  "id": "item_0006",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 6",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.213041707873344,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 1,
+			"id": "effect_slow"
+		  }
+		],
+		"element": null,
+		"requires_level": 88
+	  },
+	  "type": "magic",
+	  "weight": 13.1962919421969
+	},
+	{
+	  "damage": 10,
+	  "id": "item_0007",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 7",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.689469873905182,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 3,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "ice",
+		"requires_level": 9
+	  },
+	  "type": "weapon",
+	  "weight": 6.03436739164968
+	},
+	{
+	  "damage": 45,
+	  "id": "item_0008",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 8",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.103340789675713,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 5,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "ice",
+		"requires_level": 74
+	  },
+	  "type": "weapon",
+	  "weight": 12.6231482880946
+	},
+	{
+	  "damage": 12,
+	  "id": "item_0009",
+	  "is_unique": true,
+	  "name": "Magic Sword of Item 9",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.177479147911072,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 3,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "poison",
+		"requires_level": 65
+	  },
+	  "type": "sword",
+	  "weight": 5.66607472689906
+	},
+	{
+	  "damage": 8,
+	  "id": "item_0010",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 10",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.44780832529068,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 2,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "poison",
+		"requires_level": 94
+	  },
+	  "type": "weapon",
+	  "weight": 11.710986914763
+	},
+	{
+	  "damage": 46,
+	  "id": "item_0011",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 11",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.274266570806503,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 1,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "ice",
+		"requires_level": 60
+	  },
+	  "type": "sword",
+	  "weight": 6.22020562229619
+	},
+	{
+	  "damage": 30,
+	  "id": "item_0012",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 12",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.944038391113281,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 2,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "fire",
+		"requires_level": 61
+	  },
+	  "type": "weapon",
+	  "weight": 3.82926948713224
+	},
+	{
+	  "damage": 50,
+	  "id": "item_0013",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 13",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.347387492656708,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 3,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "ice",
+		"requires_level": 39
+	  },
+	  "type": "magic",
+	  "weight": 3.49056287186151
+	},
+	{
+	  "damage": 45,
+	  "id": "item_0014",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 14",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.670915246009827,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 3,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "poison",
+		"requires_level": 29
+	  },
+	  "type": "magic",
+	  "weight": 1.15048971513414
+	},
+	{
+	  "damage": 33,
+	  "id": "item_0015",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 15",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.785351276397705,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 1,
+			"id": "effect_slow"
+		  }
+		],
+		"element": null,
+		"requires_level": 51
+	  },
+	  "type": "magic",
+	  "weight": 11.2378664028407
+	},
+	{
+	  "damage": 17,
+	  "id": "item_0016",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 16",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.084972582757473,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 5,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "poison",
+		"requires_level": 41
+	  },
+	  "type": "weapon",
+	  "weight": 10.0685807927235
+	},
+	{
+	  "damage": 49,
+	  "id": "item_0017",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 17",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.64397406578064,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 2,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "fire",
+		"requires_level": 49
+	  },
+	  "type": "magic",
+	  "weight": 10.9350777279514
+	},
+	{
+	  "damage": 27,
+	  "id": "item_0018",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 18",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.505002021789551,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 5,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "poison",
+		"requires_level": 99
+	  },
+	  "type": "weapon",
+	  "weight": 11.1931371256843
+	},
+	{
+	  "damage": 32,
+	  "id": "item_0019",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 19",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.739555358886719,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 1,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "ice",
+		"requires_level": 75
+	  },
+	  "type": "sword",
+	  "weight": 7.15905508491626
+	},
+	{
+	  "damage": 36,
+	  "id": "item_0020",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 20",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.246132701635361,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 3,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "ice",
+		"requires_level": 17
+	  },
+	  "type": "magic",
+	  "weight": 11.8868600912926
+	},
+	{
+	  "damage": 38,
+	  "id": "item_0021",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 21",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.0628451481461525,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 3,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "poison",
+		"requires_level": 81
+	  },
+	  "type": "weapon",
+	  "weight": 6.3172625418601
+	},
+	{
+	  "damage": 16,
+	  "id": "item_0022",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 22",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.867282569408417,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 2,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "ice",
+		"requires_level": 81
+	  },
+	  "type": "weapon",
+	  "weight": 14.0979169815793
+	},
+	{
+	  "damage": 25,
+	  "id": "item_0023",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 23",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.978899240493774,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 2,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "poison",
+		"requires_level": 91
+	  },
+	  "type": "magic",
+	  "weight": 12.8512544060213
+	},
+	{
+	  "damage": 46,
+	  "id": "item_0024",
+	  "is_unique": false,
+	  "name": "Magic Sword of Item 24",
+	  "properties": {
+		"effects": [
+		  {
+			"chance": 0.227490320801735,
+			"id": "effect_burn"
+		  },
+		  {
+			"duration": 3,
+			"id": "effect_slow"
+		  }
+		],
+		"element": "fire",
+		"requires_level": 55
+	  },
+	  "type": "magic",
+	  "weight": 12.3318528690267
+	}
+  ],
+  "quests": [
+	{
+	  "id": "quest_000",
+	  "is_main_quest": true,
+	  "rewards": {
+		"gold": 504,
+		"xp": 2155
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0054"
+		},
+		{
+		  "action": "collect",
+		  "amount": 2,
+		  "target": "item_0015"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 0"
+	},
+	{
+	  "id": "quest_001",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 598,
+		"xp": 3787
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0059"
+		},
+		{
+		  "action": "collect",
+		  "amount": 6,
+		  "target": "item_0016"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 1"
+	},
+	{
+	  "id": "quest_002",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 651,
+		"xp": 1906
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0009"
+		},
+		{
+		  "action": "collect",
+		  "amount": 8,
+		  "target": "item_0012"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 2"
+	},
+	{
+	  "id": "quest_003",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 965,
+		"xp": 4163
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0054"
+		},
+		{
+		  "action": "collect",
+		  "amount": 8,
+		  "target": "item_0000"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 3"
+	},
+	{
+	  "id": "quest_004",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 854,
+		"xp": 2487
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0045"
+		},
+		{
+		  "action": "collect",
+		  "amount": 5,
+		  "target": "item_0023"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 4"
+	},
+	{
+	  "id": "quest_005",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 754,
+		"xp": 3066
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0038"
+		},
+		{
+		  "action": "collect",
+		  "amount": 10,
+		  "target": "item_0012"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 5"
+	},
+	{
+	  "id": "quest_006",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 463,
+		"xp": 2193
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0047"
+		},
+		{
+		  "action": "collect",
+		  "amount": 6,
+		  "target": "item_0016"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 6"
+	},
+	{
+	  "id": "quest_007",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 840,
+		"xp": 1123
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0013"
+		},
+		{
+		  "action": "collect",
+		  "amount": 5,
+		  "target": "item_0006"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 7"
+	},
+	{
+	  "id": "quest_008",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 836,
+		"xp": 2789
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0035"
+		},
+		{
+		  "action": "collect",
+		  "amount": 3,
+		  "target": "item_0015"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 8"
+	},
+	{
+	  "id": "quest_009",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 511,
+		"xp": 1260
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0009"
+		},
+		{
+		  "action": "collect",
+		  "amount": 2,
+		  "target": "item_0010"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 9"
+	},
+	{
+	  "id": "quest_010",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 147,
+		"xp": 4907
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0013"
+		},
+		{
+		  "action": "collect",
+		  "amount": 3,
+		  "target": "item_0004"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 10"
+	},
+	{
+	  "id": "quest_011",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 688,
+		"xp": 1141
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0040"
+		},
+		{
+		  "action": "collect",
+		  "amount": 4,
+		  "target": "item_0010"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 11"
+	},
+	{
+	  "id": "quest_012",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 557,
+		"xp": 2957
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0023"
+		},
+		{
+		  "action": "collect",
+		  "amount": 10,
+		  "target": "item_0019"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 12"
+	},
+	{
+	  "id": "quest_013",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 930,
+		"xp": 2477
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0035"
+		},
+		{
+		  "action": "collect",
+		  "amount": 4,
+		  "target": "item_0004"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 13"
+	},
+	{
+	  "id": "quest_014",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 423,
+		"xp": 2165
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0022"
+		},
+		{
+		  "action": "collect",
+		  "amount": 2,
+		  "target": "item_0008"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 14"
+	},
+	{
+	  "id": "quest_015",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 776,
+		"xp": 160
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0004"
+		},
+		{
+		  "action": "collect",
+		  "amount": 4,
+		  "target": "item_0011"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 15"
+	},
+	{
+	  "id": "quest_016",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 556,
+		"xp": 139
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0037"
+		},
+		{
+		  "action": "collect",
+		  "amount": 10,
+		  "target": "item_0010"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 16"
+	},
+	{
+	  "id": "quest_017",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 934,
+		"xp": 4436
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0027"
+		},
+		{
+		  "action": "collect",
+		  "amount": 9,
+		  "target": "item_0019"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 17"
+	},
+	{
+	  "id": "quest_018",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 708,
+		"xp": 759
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0042"
+		},
+		{
+		  "action": "collect",
+		  "amount": 10,
+		  "target": "item_0017"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 18"
+	},
+	{
+	  "id": "quest_019",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 589,
+		"xp": 3236
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0055"
+		},
+		{
+		  "action": "collect",
+		  "amount": 7,
+		  "target": "item_0007"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 19"
+	},
+	{
+	  "id": "quest_020",
+	  "is_main_quest": true,
+	  "rewards": {
+		"gold": 80,
+		"xp": 4983
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0032"
+		},
+		{
+		  "action": "collect",
+		  "amount": 8,
+		  "target": "item_0022"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 20"
+	},
+	{
+	  "id": "quest_021",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 559,
+		"xp": 774
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0056"
+		},
+		{
+		  "action": "collect",
+		  "amount": 8,
+		  "target": "item_0003"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 21"
+	},
+	{
+	  "id": "quest_022",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 658,
+		"xp": 3171
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0012"
+		},
+		{
+		  "action": "collect",
+		  "amount": 7,
+		  "target": "item_0020"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 22"
+	},
+	{
+	  "id": "quest_023",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 661,
+		"xp": 2895
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0013"
+		},
+		{
+		  "action": "collect",
+		  "amount": 9,
+		  "target": "item_0006"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 23"
+	},
+	{
+	  "id": "quest_024",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 978,
+		"xp": 2017
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0008"
+		},
+		{
+		  "action": "collect",
+		  "amount": 8,
+		  "target": "item_0009"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 24"
+	},
+	{
+	  "id": "quest_025",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 836,
+		"xp": 4047
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0008"
+		},
+		{
+		  "action": "collect",
+		  "amount": 5,
+		  "target": "item_0002"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 25"
+	},
+	{
+	  "id": "quest_026",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 844,
+		"xp": 2002
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0002"
+		},
+		{
+		  "action": "collect",
+		  "amount": 2,
+		  "target": "item_0012"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 26"
+	},
+	{
+	  "id": "quest_027",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 731,
+		"xp": 4631
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0055"
+		},
+		{
+		  "action": "collect",
+		  "amount": 2,
+		  "target": "item_0010"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 27"
+	},
+	{
+	  "id": "quest_028",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 733,
+		"xp": 4799
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0030"
+		},
+		{
+		  "action": "collect",
+		  "amount": 6,
+		  "target": "item_0021"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 28"
+	},
+	{
+	  "id": "quest_029",
+	  "is_main_quest": false,
+	  "rewards": {
+		"gold": 427,
+		"xp": 2373
+	  },
+	  "steps": [
+		{
+		  "action": "talk_to",
+		  "target": "char_0028"
+		},
+		{
+		  "action": "collect",
+		  "amount": 7,
+		  "target": "item_0015"
+		},
+		{
+		  "action": "defeat",
+		  "target": "generic_monster"
+		}
+	  ],
+	  "title": "The Great Quest number 29"
+	}
+  ]
+}

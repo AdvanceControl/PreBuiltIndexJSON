@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="PreBuiltIndexJSONOutput" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<brief_description>
+		An output result from [PreBuiltIndexJSON].
+	</brief_description>
+	<description>
+		[PreBuiltIndexJSONOutput] contains either an error type or output data. Different output types contain different error information.
+		[b]Note:[/b] Attempting to get information that is not supported by the current output type will generate an error.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get_data" qualifiers="const">
+			<return type="String" />
+			<description>
+				Returns the data contained in this output type.
+			</description>
+		</method>
+		<method name="get_message" qualifiers="const">
+			<return type="String" />
+			<description>
+				Returns the human-readable error message contained in this output type.
+			</description>
+		</method>
+		<method name="get_error" qualifiers="const">
+			<return type="int" enum="Error" />
+			<description>
+				Returns the engine error code contained in this output type.
+			</description>
+		</method>
+		<method name="get_error_type" qualifiers="const">
+			<return type="int" enum="ErrorType"/>
+			<description>
+				Returns the error type contained in this output type.
+			</description>
+		</method>
+		<method name="get_line" qualifiers="const">
+			<return type="int" /> <!-- Corrected from 'bool' to 'int' -->
+			<description>
+				Returns the error line number information contained in this output type.
+			</description>
+		</method>
+		<method name="has_message" qualifiers="const">
+			<return type="bool" />
+			<description>
+				Returns [code]true[/code] if this output type contains a human-readable error message.
+			</description>
+		</method>
+		<method name="has_line" qualifiers="const">
+			<return type="bool" />
+			<description>
+				Returns [code]true[/code] if this output type contains error line number information.
+			</description>
+		</method>
+		<method name="has_data" qualifiers="const">
+			<return type="bool" />
+			<description>
+				Returns [code]true[/code] if this output type contains data.
+			</description>
+		</method>
+	</methods>
+	<constants>
+		<constant name="OK" value="0" enum="ErrorType">
+			No error.
+		</constant>
+		<constant name="ERR_BUILT_IN_METHOD" value="1" enum="ErrorType">
+			An error occurred in a built-in engine method.
+			[b]Contains:[/b] Engine error code.
+		</constant>
+		<constant name="ERR_JSON_PARSE" value="2" enum="ErrorType">
+			Error parsing JSON data.
+			[b]Contains:[/b] Error message, error line.
+		</constant>
+		<constant name="ERR_UNSUPPORTED_TYPE" value="3" enum="ErrorType">
+			Unsupported data type encountered.
+			[b]Contains:[/b] Error message.
+		</constant>
+		<constant name="ERR_FILE_NOT_OPEN" value="4" enum="ErrorType">
+			No file is currently open.
+			[b]Contains:[/b] None.
+		</constant>
+		<constant name="ERR_DATA_NOT_OPEN" value="5" enum="ErrorType">
+			No data is currently open.
+			[b]Contains:[/b] None.
+		</constant>
+		<constant name="ERR_VALUE_PARSE" value="6" enum="ErrorType">
+			An error occurred while parsing a value.
+			[b]Contains:[/b] Error message, error line.
+		</constant>
+		<constant name="ERR_INVALID_PATH" value="7" enum="ErrorType">
+			Invalid path error.
+			[b]Contains:[/b] Error message.
+		</constant>
+		<constant name="ERR_LINE_IN_JUMP_MARKER" value="8" enum="ErrorType">
+			Invalid number of lines for the jump marker.
+			[b]Contains:[/b] Error message.
+		</constant>
+	</constants>
+</class>

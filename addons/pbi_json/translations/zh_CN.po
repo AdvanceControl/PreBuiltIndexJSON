@@ -1,0 +1,257 @@
+# Chinese (Simplified) translation for PBIJSON GDExtension.
+# Copyright (c) 2025 AdvanceControl
+# This file is distributed under the same license as the PreBuiltIndexJSON.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PreBuiltIndexJSON\n"
+"Report-Msgid-Bugs-To: \n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Pre-Built Index JSON."
+msgstr "预构建索引 JSON 。"
+
+msgid ""
+"PreBuiltIndexJSON defines a file format that uses virtual paths to efficiently look up corresponding values in JSON data.\n"
+"This class can build a standard JSON file into a PBIJSON file."
+msgstr ""
+"PreBuiltIndexJSON 皆在指创建一个使用虚拟路径在 JSON 数据中高效的查找对应值的文件格式\n"
+"该类可以将 JSON 文件构建为 PBIJSON 文件，PBIJSON 文件。"
+
+msgid ""
+"Builds a PBIJSON file from a standard JSON file and saves it to the "
+"specified path. If successful, the returned [PreBuiltIndexJSONOutput] "
+"object will contain the PBIJSON-formatted string data; if it fails, it will "
+"contain an error message."
+msgstr ""
+"从一个标准的JSON文件构建一个PBIJSON文件并保存到指定路径。如果成功，返回的[PreBuiltIndexJSONOutput]对象将包含PBIJSON格式的字符串数据；如果失败，则包含错误信息。"
+
+msgid ""
+"Builds a PBIJSON-formatted string from a string containing standard JSON "
+"data. If successful, the returned [PreBuiltIndexJSONOutput] object will "
+"contain the PBIJSON-formatted string data; if it fails, it will contain an "
+"error message."
+msgstr ""
+"从一个包含标准JSON数据的字符串构建PBIJSON格式的字符串。如果成功，返回的[PreBuiltIndexJSONOutput]对象将包含PBIJSON格式的字符串数据；如果失败，则包含错误信息。"
+
+msgid ""
+"Clears all loaded data and resets the object's state, including all caches "
+"and error information."
+msgstr "清除所有已加载的数据并重置对象状态，包括所有缓存和错误信息。"
+
+msgid "Clears a specific cache based on the given [enum CacheFlags] flag."
+msgstr "根据给定的[enum CacheFlags]标志，清除一个特定的缓存。"
+
+msgid ""
+"Clears all query caches (value cache, path existence cache, size cache, "
+"etc.)."
+msgstr "清除所有查询缓存（值缓存、路径存在缓存、大小缓存等）。"
+
+msgid ""
+"Closes the currently opened data or file, clearing the loaded data but "
+"preserving the caches."
+msgstr "关闭当前打开的数据或文件，清除已加载的数据但保留缓存。"
+
+msgid "Gets the current bitmask used to enable or disable specific caches."
+msgstr "获取当前用于启用或禁用特定缓存的位掩码。"
+
+msgid ""
+"Gets all direct child keys of a container at the specified path. For "
+"dictionaries, it returns their keys; for arrays, it returns their indices. "
+"Performance is much higher than [method get_value]."
+msgstr "获取指定路径下容器的所有直接子键。对于字典，返回其键；对于数组，返回其索引。性能远高于[method get_value]。"
+
+msgid ""
+"Returns the error that occurred during the last operation. If there was no "
+"error, the error type of the returned [PreBuiltIndexJSONOutput] object will "
+"be [code]OK[/code]."
+msgstr "返回上一次操作中发生的错误。如果没有错误，返回的 [PreBuiltIndexJSONOutput] 对象的错误类型将是 [code]OK[/code]。"
+
+msgid ""
+"Returns the path of the file if the current data was loaded via [method "
+"open_file]. Otherwise, returns an empty string."
+msgstr "如果当前数据是通过[method open_file]加载的，则返回该文件的路径。否则返回空字符串。"
+
+msgid ""
+"Gets the size (number of direct child elements) of a container at the "
+"specified path. Performance is much higher than [method get_value]."
+msgstr "获取指定路径下容器的大小（直接子元素的数量）。性能远高于[method get_value]。"
+
+msgid "Recursively gets all sub-paths under a specified path."
+msgstr "递归地获取指定路径下的所有子路径。"
+
+msgid ""
+"Gets the value at the specified key path. If the path does not exist or an "
+"error occurs, [param default] will be returned."
+msgstr "获取指定键路径下的值。如果路径不存在或发生错误，将返回[param default]。"
+
+msgid "Checks if a specific key exists in a specific cache."
+msgstr "检查一个特定的键是否存在于一个特定的缓存中。"
+
+msgid ""
+"Checks if a given path exists in the data. This is much faster than "
+"checking if [method get_value] returns null."
+msgstr "检查数据中是否存在给定的路径。这比检查[method get_value]是否返回null要快得多。"
+
+msgid "Checks if the specified cache is currently enabled."
+msgstr "检查指定的缓存当前是否已启用。"
+
+msgid ""
+"Returns [code]true[/code] if any PBIJSON data is currently loaded (from a "
+"file or a string)."
+msgstr "如果当前有任何PBIJSON数据被加载（通过文件或字符串），则返回[code]true[/code]。"
+
+msgid ""
+"Opens a PBIJSON file for reading. If successful, the error type of the "
+"returned [PreBuiltIndexJSONOutput] object will be [code]OK[/code]; "
+"otherwise, it will contain an error message."
+msgstr "打开一个PBIJSON文件用于读取。如果成功，返回的[PreBuiltIndexJSONOutput]对象的错误类型将是[code]OK[/code]；否则将包含错误信息。"
+
+msgid ""
+"Loads data from a [PackedStringArray] containing PBIJSON data. Each element "
+"in the array represents a line from the file."
+msgstr "从一个包含PBIJSON数据的[PackedStringArray]中加载数据。数组中的每个元素代表文件中的一行。"
+
+msgid "Loads data from a string containing PBIJSON data."
+msgstr "从一个包含PBIJSON数据的字符串中加载数据。"
+
+msgid ""
+"Reloads the file that was originally opened via [method open_file]. An "
+"error will be generated if the object is not currently loaded from a file."
+msgstr "重新加载最初通过[method open_file]打开的文件。如果对象当前不是从文件加载的，将会产生一个错误。"
+
+msgid ""
+"Removes a specific key from a specific cache. Returns [code]true[/code] if "
+"the key was found and successfully removed."
+msgstr "从一个特定的缓存中移除一个特定的键。如果键被成功找到并移除，则返回[code]true[/code]。"
+
+msgid "Sets whether the specified cache is enabled or disabled."
+msgstr "设置指定的缓存是启用还是禁用。"
+
+msgid "Sets the bitmask used to enable or disable specific caches."
+msgstr "设置用于启用或禁用特定缓存的位掩码。"
+
+msgid "A bitmask of flags to control which caches are active."
+msgstr "用于控制哪些缓存处于活动状态的标志。"
+
+msgid "No caches are enabled."
+msgstr "无。"
+
+msgid "Caches the output of [method get_value]."
+msgstr "缓存 [method get_value] 的输出。"
+
+msgid "Caches the output of [method has_path]."
+msgstr "缓存 [method has_path] 的输出。"
+
+
+msgid "Caches the output of [method get_size]."
+msgstr "缓存 [method get_size] 的输出。"
+
+msgid "Caches the output of [method get_sub_paths]."
+msgstr "缓存 [method get_sub_paths] 的输出。"
+
+msgid "Caches the output of [method get_keys]."
+msgstr "缓存 [method get_keys] 的输出。"
+
+msgid "All caches are enabled."
+msgstr "所有。"
+
+msgid ""
+"[PreBuiltIndexJSONOutput] contains either an error type or output data. "
+"Different output types contain different error information.\n"
+"[b]Note:[/b] Attempting to get information that is not supported by the "
+"current output type will generate an error."
+msgstr ""
+"[PreBuiltIndexJSONOutput] 包含了错误类型或者输出的数据，不同的输出类型包含不同的错误信息。\n"
+"[b]注意：[/b]尝试获取该输出类型不支持的信息将生成一个错误。"
+
+msgid "Returns the data contained in this output type."
+msgstr "返回该输出类型包含的数据。"
+
+msgid "Returns the human-readable error message contained in this output type."
+msgstr "返回该输出类型包含的人类可读的错误信息。"
+
+msgid "Returns the engine error code contained in this output type."
+msgstr "返回该输出类型包含的错误码。"
+
+msgid "Returns the error type contained in this output type."
+msgstr "返回该输出类型包含的错误类型。"
+
+msgid "Returns the error line number information contained in this output type."
+msgstr "返回该输出类型包含的错误行号信息。"
+
+msgid ""
+"Returns [code]true[/code] if this output type contains a human-readable "
+"error message."
+msgstr "如果该输出类型包含人类可读的错误信息则返回[code]true[/code]。"
+
+msgid ""
+"Returns [code]true[/code] if this output type contains error line number "
+"information."
+msgstr "如果该输出类型包含错误行号信息则返回[code]true[/code]。"
+
+msgid "Returns [code]true[/code] if this output type contains data."
+msgstr "如果该输出类型包含数据则返回[code]true[/code]。"
+
+msgid "No error."
+msgstr "无错误。"
+
+msgid ""
+"An error occurred in a built-in engine method.\n"
+"[b]Contains:[/b] Engine error code."
+msgstr ""
+"内置方法错误。\n"
+"[b]包含：[/b]错误码。"
+
+msgid ""
+"Error parsing JSON data.\n"
+"[b]Contains:[/b] Error message, error line."
+msgstr ""
+"JSON 数据解析错误。\n"
+"[b]包含：[/b]错误信息，错误行。"
+
+msgid ""
+"Unsupported data type encountered.\n"
+"[b]Contains:[/b] Error message."
+msgstr ""
+"类型错误。\n"
+"[b]包含：[/b]错误信息。"
+
+msgid ""
+"No file is currently open.\n"
+"[b]Contains:[/b] None."
+msgstr ""
+"当前没有打开的文件。\n"
+"[b]包含：[/b]无。"
+
+msgid ""
+"No data is currently open.\n"
+"[b]Contains:[/b] None."
+msgstr ""
+"当前没有打开的数据错误。\n"
+"[b]包含：[/b]无。"
+
+msgid ""
+"An error occurred while parsing a value.\n"
+"[b]Contains:[/b] Error message, error line."
+msgstr ""
+"当前没有打开的数据错误。\n"
+"[b]包含：[/b]错误信息，错误行。"
+
+msgid ""
+"Invalid path error.\n"
+"[b]Contains:[/b] Error message."
+msgstr ""
+"无效路径错误。\n"
+"[b]包含：[/b]错误信息。"
+
+msgid ""
+"Invalid number of lines for the jump marker.\n"
+"[b]Contains:[/b] Error message."
+msgstr ""
+"当前没有打开的数据错误。\n"
+"[b]包含：[/b]错误信息。"
