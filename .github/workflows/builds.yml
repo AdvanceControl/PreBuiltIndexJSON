@@ -35,45 +35,16 @@ jobs:
 
     runs-on: ${{ matrix.target.os }}
     steps:
-      - name: 1. Clean Workspace
-        run: rm -rf ./* || true
+      - name: Checkout Main Repository
+        uses: actions/checkout@v4
 
-      - name: 2. Clone Main Repository (using PAT)
-        run: git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git .
+      - name: Clone godot-cpp Submodule Manually
+        run: git clone https://github.com/godotengine/godot-cpp.git godot-cpp
 
-      - name: 3. Checkout the Correct Commit
-        run: git checkout ${{ github.sha }}
-
-      - name: 4. Verify .gitmodules file
-        run: |
-          echo "--- Verifying .gitmodules content ---"
-          cat .gitmodules
-
-      - name: 5. Initialize Submodules (NO UPDATE YET)
-        run: git submodule init
-
-      - name: 6. Manually Sync Submodule URL
-        # This forces git to use the URL from .gitmodules, overriding any local cache
-        run: git submodule sync --recursive
-
-      - name: 7. Update Submodules (The Final Test)
-        # We use --progress to see detailed output
-        run: git submodule update --recursive --progress
-
-      - name: 8. The Final Verification
-        run: |
-          echo "--- FINAL VERIFICATION: Listing action directory ---"
-          ls -laR godot-cpp/.github/actions/
-          echo "--- Checking file path ---"
-          if [ -f "godot-cpp/.github/actions/setup-godot-cpp/action.yml" ]; then
-            echo "SUCCESS: action.yml was found!"
-          else
-            echo "FAILURE: action.yml is STILL MISSING!"
-            exit 1
-          fi
-
-      - name: 9. Run the local action
-        if: success() # Only run if the verification above passed
+      - name: Verify Action File
+        run: ls -la godot-cpp/.github/actions/setup-godot-cpp/
+      
+      - name: Setup godot-cpp
         uses: ./godot-cpp/.github/actions/setup-godot-cpp
         with:
           platform: ${{ matrix.target.platform }}
