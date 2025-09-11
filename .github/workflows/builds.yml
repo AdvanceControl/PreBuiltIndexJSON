@@ -35,25 +35,17 @@ jobs:
 
     runs-on: ${{ matrix.target.os }}
     steps:
-      - name: Checkout Repository (Full Depth)
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Initialize and Update Submodules
-        run: git submodule update --init --recursive
+      - name: Update Submodule to Latest Version
+        run: git submodule update --init --recursive --remote
       
-      - name: Verify Submodule Content
-        run: |
-          echo "--- Verifying action file existence ---"
-          ls -la godot-cpp/.github/actions/setup-godot-cpp/
-
       - name: Setup godot-cpp
         uses: ./godot-cpp/.github/actions/setup-godot-cpp
         with:
           platform: ${{ matrix.target.platform }}
           em-version: 3.1.62
-
 
       # Add linux x86_32 toolchain
       - name: Install multilib support
