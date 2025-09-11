@@ -35,21 +35,25 @@ jobs:
 
     runs-on: ${{ matrix.target.os }}
     steps:
-      # Clone this repository
-      - name: Checkout
+      - name: Checkout Repository (Full Depth)
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          fetch-depth: 0
 
-      # Lint
-      #- name: Setup clang-format
-      #  shell: bash
-      #  run: |
-      #    python -m pip install clang-format
-      #- name: Run clang-format
-      #  shell: bash
-      #  run: |
-      #    clang-format src/** --dry-run --Werror
+      - name: Initialize and Update Submodules
+        run: git submodule update --init --recursive
+      
+      - name: Verify Submodule Content
+        run: |
+          echo "--- Verifying action file existence ---"
+          ls -la godot-cpp/.github/actions/setup-godot-cpp/
+
+      - name: Setup godot-cpp
+        uses: ./godot-cpp/.github/actions/setup-godot-cpp
+        with:
+          platform: ${{ matrix.target.platform }}
+          em-version: 3.1.62
+
 
       # Add linux x86_32 toolchain
       - name: Install multilib support
