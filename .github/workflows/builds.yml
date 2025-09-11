@@ -54,7 +54,7 @@ jobs:
         with:
           platform: ${{ matrix.target.platform }}
           em-version: 3.1.62
-
+          windows-compiler: msvc
 
 
       # Add linux x86_32 toolchain
