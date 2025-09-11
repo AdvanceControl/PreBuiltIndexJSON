@@ -35,23 +35,20 @@ jobs:
 
     runs-on: ${{ matrix.target.os }}
     steps:
-      - name: Clean and Full Clone
-        run: |
-          rm -rf ${{ github.workspace }}/*
-          git clone https://github.com/${{ github.repository }}.git .
-          git checkout ${{ github.sha }}
-
-      - name: Initialize and Update Submodules
-        run: git submodule update --init --recursive
-        
-      - name: Verify Action File
-        run: ls -la godot-cpp/.github/actions/setup-godot-cpp/
-
+      - name: Checkout Repository with Submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
+      - name: Update Submodule to Latest Version
+        run: git submodule update --init --recursive --remote
+      
       - name: Setup godot-cpp
         uses: ./godot-cpp/.github/actions/setup-godot-cpp
         with:
           platform: ${{ matrix.target.platform }}
           em-version: 3.1.62
+
 
 
 
