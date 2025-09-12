@@ -96,15 +96,20 @@ jobs:
         if: ${{ matrix.target.platform == 'windows' }}
         shell: pwsh
         run: |
-          Remove-Item addons/pbi_json/bin/* -Include *.exp,*.lib,*.pdb -Force
+          Remove-Item demo/addons/pbi_json/bin/${{ matrix.target.platform }}/* -Include *.exp,*.lib,*.pdb -Force -ErrorAction SilentlyContinue
 
-      # Upload the build
+      - name: Prepare Package Structure
+        shell: bash
+        run: |
+          mkdir -p release/addons
+
+          mv demo/addons/pbi_json release/addons/
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: pbijson_cpp-${{ matrix.target.platform }}-${{ matrix.target.arch }}-${{ matrix.target-type }}
-          path: |
-            ${{ github.workspace }}/addons/**
+          path: release/
 
   merge:
     runs-on: ubuntu-22.04
