@@ -86,7 +86,7 @@ private:
 
 	String _generate_file_header(const Dictionary &data);
 	Dictionary _parse_header(const String &p_line);
-	Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::_build(const String &p_json_text);
+	Ref<PreBuiltIndexJSONOutput> _build(const String &p_json_text);
 public:
 	PreBuiltIndexJSON();
 	~PreBuiltIndexJSON() override;

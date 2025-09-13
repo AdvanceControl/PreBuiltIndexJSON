@@ -2,6 +2,8 @@ name: Build GDExtension
 on:
   workflow_call:
   push:
+    branches:
+      - main
   pull_request:
   merge_group:
 
