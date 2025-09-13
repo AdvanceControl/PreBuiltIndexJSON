@@ -34,7 +34,7 @@ void PreBuiltIndexJSONOutput::_bind_methods() {
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_BUILT_IN_METHOD", ERR_BUILT_IN_METHOD);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_JSON_PARSE", ERR_JSON_PARSE);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_UNSUPPORTED_TYPE", ERR_UNSUPPORTED_TYPE);
-	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_FILE_NOT_FILE", ERR_FILE_NOT_FILE);
+	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_FILE_NOT_OPEN", ERR_FILE_NOT_OPEN);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_DATA_NOT_OPEN", ERR_DATA_NOT_OPEN);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_VALUE_PARSE", ERR_VALUE_PARSE);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_INVALID_PATH", ERR_INVALID_PATH);
@@ -126,7 +126,7 @@ bool PreBuiltIndexJSONOutput::has_message() const {
 		case ERR_BUILT_IN_METHOD:return false;
 		case ERR_JSON_PARSE:return true;
 		case ERR_UNSUPPORTED_TYPE:return true;
-        case ERR_FILE_NOT_FILE:return false;
+        case ERR_FILE_NOT_OPEN:return false;
 		case ERR_DATA_NOT_OPEN:return false;
 		case ERR_VALUE_PARSE:return true;
 		case ERR_INVALID_PATH:return true;
@@ -144,7 +144,7 @@ bool PreBuiltIndexJSONOutput::has_line() const {
 		case ERR_BUILT_IN_METHOD:return false;
 		case ERR_JSON_PARSE:return true;
 		case ERR_UNSUPPORTED_TYPE:return true;
-        case ERR_FILE_NOT_FILE:return false;
+        case ERR_FILE_NOT_OPEN:return false;
 		case ERR_DATA_NOT_OPEN:return false;
 		case ERR_VALUE_PARSE:return true;
 		case ERR_INVALID_PATH:return false;
