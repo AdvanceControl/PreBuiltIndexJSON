@@ -60,7 +60,7 @@ library = env.SharedLibrary(
 
 copy_library = env.Install("{}/addons/pbi_json/bin/{}/".format(projectdir, env["platform"]), library)
 
-plugin_files_source = ["addons/pbi_json/plugin.gd", "addons/pbi_json/plugin.cfg", "addons/pbi_json/pbijson_cpp.gdextension"]
+plugin_files_source = ["addons/pbi_json/plugin.gd", "addons/pbi_json/plugin.cfg", "addons/pbi_json/pbijson_cpp.gdextension","LICENSE","README.md"]
 plugin_files_target_dir = "{}/addons/pbi_json/".format(projectdir)
 copy_plugin_files = env.Install(plugin_files_target_dir, plugin_files_source)
 
