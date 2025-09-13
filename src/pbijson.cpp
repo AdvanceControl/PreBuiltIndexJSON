@@ -650,7 +650,7 @@ Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::_open_data(const PackedStringArr
 
 Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::reload_file(const bool &ignore_hash) {
 	if (get_opened_file().is_empty()) {
-		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_FILE_NOT_FILE)));
+		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_FILE_NOT_OPEN)));
 		return _last_error;
 	}
 	return open_file(_current_open_file,ignore_hash);
