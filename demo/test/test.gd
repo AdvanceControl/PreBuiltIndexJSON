@@ -53,7 +53,7 @@ func _on_build_button_down() -> void:
 
 	console.append_text("[color=cyan]Building PBIJSON from input...[/color]\n")
 
-	var output := pbij.build_from_string(json_edit.text)
+	var output :PreBuiltIndexJSONOutput= pbij.build_from_string(json_edit.text)
 
 	if output.get_error_type() != PreBuiltIndexJSONOutput.ErrorType.OK:
 		if output.has_message():
@@ -63,10 +63,14 @@ func _on_build_button_down() -> void:
 		return
 
 	pbijson_edit.text = output.get_data()
-	pbij.open_from_string(output.get_data())
-
+	var open_output := pbij.open_from_string(output.get_data())
 	console.append_text("[color=lime]Build successful. PBIJSON data is ready.[/color]\n")
-
+	if open_output.get_error_type() != PreBuiltIndexJSONOutput.ErrorType.OK:
+		if open_output.has_message():
+			console.append_text("[color=red]Load Error after build: %s[/color]\n" % open_output.get_message())
+		else:
+			console.append_text("[color=red]An unknown error occurred while loading the built data.[/color]\n")
+		return
 	await get_tree().process_frame
 
 	var base_memory = Performance.get_monitor(Performance.MEMORY_STATIC)
