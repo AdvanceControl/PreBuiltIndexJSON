@@ -1,6 +1,6 @@
 # PreBuiltIndexJSON
 
-Instead of parsing a complex JSON tree every time you need a value, PBIJSON pre-processes your .json file into a highly optimized, flat-indexed .pbijson format. This format uses depth markers, jump markers, and a key-sorted structure to enable lightning-fast data retrieval using binary search.
+Instead of parsing a complex JSON tree every time you need a value, PBIJSON pre-processes your .json file into a highly optimized, flat-indexed .pbijson format. This format uses depth markers, jump markers structure to enable lightning-fast data retrieval using linear search.
 
 ## Features
 
