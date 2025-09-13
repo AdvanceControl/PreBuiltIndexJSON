@@ -30,6 +30,11 @@ msgstr ""
 "另见:[method build_from_file] , [method build_from_string]."
 
 msgid ""
+"An output result from [PreBuiltIndexJSON]."
+msgstr ""
+[PreBuiltIndexJSON] 的输出。"
+
+msgid ""
 "Builds a PBIJSON-formatted string from a standard JSON file. If successful, the returned [PreBuiltIndexJSONOutput] object will contain the PBIJSON-formatted string data; if it fails, it will contain an error message.\n"
 "See also:[method build_from_file_to] , [method build_from_string]."
 msgstr ""

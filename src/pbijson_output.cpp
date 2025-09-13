@@ -40,7 +40,7 @@ void PreBuiltIndexJSONOutput::_bind_methods() {
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_INVALID_PATH", ERR_INVALID_PATH);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_LINE_IN_JUMP_MARKER", ERR_LINE_IN_JUMP_MARKER);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_FILE_HEADER", ERR_FILE_HEADER);
-	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_FILE_FORMAT", ERR_FORMAT);
+	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_FORMAT", ERR_FORMAT);
     
 
     ClassDB::bind_method(D_METHOD("get_message"), &PreBuiltIndexJSONOutput::get_message);
