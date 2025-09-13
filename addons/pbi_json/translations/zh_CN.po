@@ -32,7 +32,7 @@ msgstr ""
 msgid ""
 "An output result from [PreBuiltIndexJSON]."
 msgstr ""
-[PreBuiltIndexJSON] 的输出。"
+"[PreBuiltIndexJSON] 的输出。"
 
 msgid ""
 "Builds a PBIJSON-formatted string from a standard JSON file. If successful, the returned [PreBuiltIndexJSONOutput] object will contain the PBIJSON-formatted string data; if it fails, it will contain an error message.\n"
