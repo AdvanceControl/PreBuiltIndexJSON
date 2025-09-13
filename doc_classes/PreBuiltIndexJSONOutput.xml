@@ -95,5 +95,18 @@
 			Invalid number of lines for the jump marker.
 			[b]Contains:[/b] Error message.
 		</constant>
+		<constant name="ERR_FILE_HEADER" value="9" enum="ErrorType">
+			File header format error.
+			[b]Note:[/b] A missing file header will return [constant ERR_FORMAT].
+			[b]Contains:[/b] Error message.
+		</constant>
+		<constant name="ERR_HASH" value="10" enum="ErrorType">
+			Hash verification error.
+			[b]Contains:[/b] Error message.
+		</constant>
+		<constant name="ERR_FORMAT" value="11" enum="ErrorType">
+			File format version mismatch.
+			[b]Contains:[/b] Error message.
+		</constant>
 	</constants>
 </class>

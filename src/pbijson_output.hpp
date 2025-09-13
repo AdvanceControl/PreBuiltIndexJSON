@@ -43,6 +43,9 @@ public:
 		ERR_VALUE_PARSE,
 		ERR_INVALID_PATH,
 		ERR_LINE_IN_JUMP_MARKER,
+		ERR_FILE_HEADER,
+		ERR_HASH,
+		ERR_FORMAT,
 	};
 
 protected:

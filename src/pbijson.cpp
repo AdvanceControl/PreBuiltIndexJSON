@@ -30,8 +30,6 @@
 
 using namespace godot;
 
-// --- CacheManager Definition and Implementation ---
-// We define it here to keep it private to the .cpp file
 template <typename T>
 class TypedCache {
 private:
@@ -106,16 +104,16 @@ public:
 	}
 };
 
-// --- PreBuiltIndexJSON Implementation ---
 
 void PreBuiltIndexJSON::_bind_methods() {
 	// ADD_PROPERTY(PropertyInfo(Variant::INT, "cache_flags", PROPERTY_HINT_FLAGS, "Value Cache,Path Existence Cache,Size Cache,Sub-paths Cache,Keys Cache"), "set_cache_flags", "get_cache_flags");
 	ClassDB::bind_method(D_METHOD("build_from_string", "json_text"), &PreBuiltIndexJSON::build_from_string);
-	ClassDB::bind_method(D_METHOD("build_from_file", "json_file_path", "target_path"), &PreBuiltIndexJSON::build_from_file);
-	ClassDB::bind_method(D_METHOD("open_file", "path"), &PreBuiltIndexJSON::open_file);
-	ClassDB::bind_method(D_METHOD("open_from_string", "data"), &PreBuiltIndexJSON::open_from_string);
-	ClassDB::bind_method(D_METHOD("open_from_array", "data"), &PreBuiltIndexJSON::open_from_array);
-	ClassDB::bind_method(D_METHOD("reload_file"), &PreBuiltIndexJSON::reload_file);
+	ClassDB::bind_method(D_METHOD("build_from_file", "json_file_path"), &PreBuiltIndexJSON::build_from_file);
+	ClassDB::bind_method(D_METHOD("build_from_file_to", "json_file_path", "target_path"), &PreBuiltIndexJSON::build_from_file_to);
+	ClassDB::bind_method(D_METHOD("open_file", "path","ignore_hash"), &PreBuiltIndexJSON::open_file, DEFVAL(false));
+	ClassDB::bind_method(D_METHOD("open_from_string", "data","ignore_hash"), &PreBuiltIndexJSON::open_from_string, DEFVAL(false));
+	ClassDB::bind_method(D_METHOD("open_from_array", "data","ignore_hash"), &PreBuiltIndexJSON::open_from_array, DEFVAL(false));
+	ClassDB::bind_method(D_METHOD("reload_file","ignore_hash"), &PreBuiltIndexJSON::reload_file, DEFVAL(false));
 	ClassDB::bind_method(D_METHOD("get_value", "key_path", "default"), &PreBuiltIndexJSON::get_value, DEFVAL(Variant()));
     ClassDB::bind_method(D_METHOD("has_path", "key_path"), &PreBuiltIndexJSON::has_path);
     ClassDB::bind_method(D_METHOD("get_size", "key_path"), &PreBuiltIndexJSON::get_size);
@@ -132,6 +130,8 @@ void PreBuiltIndexJSON::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("is_cache_enabled", "flag"), &PreBuiltIndexJSON::is_cache_enabled);
 	ClassDB::bind_method(D_METHOD("set_cache_enabled", "flag", "enabled"), &PreBuiltIndexJSON::set_cache_enabled);
     ClassDB::bind_method(D_METHOD("has_in_cache", "flag", "key_path"), &PreBuiltIndexJSON::has_in_cache);
+
+	ClassDB::bind_static_method(get_class_static(),D_METHOD("get_pbijson_format"), &PreBuiltIndexJSON::get_pbijson_format);
 
 	BIND_ENUM_CONSTANT(NONE);
 	BIND_ENUM_CONSTANT(VALUE_CACHE);
@@ -152,7 +152,31 @@ PreBuiltIndexJSON::~PreBuiltIndexJSON() {
 	delete _cache_manager;
 }
 
-Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::build_from_file(const String &p_json_file, const String &p_target_path) {
+String PreBuiltIndexJSON::get_pbijson_format() {
+	return String("PBI_JSON_1");
+}
+
+Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::build_from_file(const String &p_json_file) {
+	_mutex->lock();
+	_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::OK)));
+	Ref<FileAccess> read_file = FileAccess::open(p_json_file, FileAccess::ModeFlags::READ);
+	if (read_file.is_null()) {
+		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(FileAccess::get_open_error())));
+		_mutex->unlock();
+		return _last_error;
+	}
+	Ref<PreBuiltIndexJSONOutput> output = _build(read_file->get_as_text());
+	if (output->get_error_type() != PreBuiltIndexJSONOutput::OK) {
+		_last_error = output;
+		_mutex->unlock();
+		return _last_error;
+	}
+	
+	_mutex->unlock();
+	return output;
+}
+
+Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::build_from_file_to(const String &p_json_file, const String &p_target_path) {
 	_mutex->lock();
 	Ref<FileAccess> read_file = FileAccess::open(p_json_file, FileAccess::ModeFlags::READ);
 	if (read_file.is_null()) {
@@ -160,9 +184,8 @@ Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::build_from_file(const String &p_
 		_mutex->unlock();
 		return _last_error;
 	}
-	Ref<PreBuiltIndexJSONOutput> output = build_from_string(read_file->get_as_text());
-	if (output->get_error_type() != PreBuiltIndexJSONOutput::OK) {
-		_last_error->set_to(output);
+	Ref<PreBuiltIndexJSONOutput> output = _build(read_file->get_as_text());
+	if (!output->has_data()) {
 		_mutex->unlock();
 		return _last_error;
 	}
@@ -173,14 +196,20 @@ Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::build_from_file(const String &p_
 		return _last_error;
 	}
 	write_file->store_string(output->get_data());
-	_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::OK)));
 	_mutex->unlock();
 	return output;
 }
 
 Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::build_from_string(const String &p_json_text) {
 	_mutex->lock();
-	if (!_build_buffer.is_empty()) {
+	Ref<PreBuiltIndexJSONOutput> output = _build(p_json_text);
+	_mutex->unlock();
+	return output;
+}
+
+Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::_build(const String &p_json_text) {
+	_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::OK)));
+	if (!_build_buffer.is_empty()) { // why?
 		_build_buffer.clear();
 		UtilityFunctions::printerr("Build buffer was not empty. This may indicate a data race or unclean state.", __FUNCTION__, __FILE__, __LINE__);
 	}
@@ -201,10 +230,27 @@ Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::build_from_string(const String &
 	_build_flat_index_recursive(json_data, 1, container_lines);
 	_add_jump_marks_to_buffer(container_lines);
 	String file_text = String("\n").join(_build_buffer);
+	String md5 = file_text.md5_text();
+	Dictionary header = Dictionary();
+	header.set("HASH_ALGO","MD5");
+	header.set("HASH",md5);
+	header.set("FV",get_pbijson_format());
+	file_text = _generate_file_header(header) + file_text;
 	_build_buffer.clear();
 	Ref<PreBuiltIndexJSONOutput> output = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(file_text)));
-	_mutex->unlock();
 	return output;
+}
+
+String PreBuiltIndexJSON::_generate_file_header(const Dictionary &data) {
+	PackedStringArray fields = PackedStringArray();
+	
+	PackedStringArray data_keys =data.keys();
+	for (int i=0;i < data_keys.size();i++) {
+		String key = data_keys.get(i);
+		String value = data.get(key,"");
+		fields.append(key + ">" + value);
+	}
+	return String("|").join(fields) +"\n";
 }
 
 void PreBuiltIndexJSON::_build_flat_index_recursive(const Variant &p_current_value, int p_depth, Dictionary &p_container_lines) {
@@ -338,7 +384,7 @@ Variant PreBuiltIndexJSON::get_value(const String &p_key_path, const Variant &p_
 		const String &line_content = _current_open_data[current_line_idx];
 		if (i == path_parts.size() - 1) {
 			if (line_content.contains(String::chr(JUMP_MARKER_OPEN))) {
-				int jump_count = line_content.split(String::chr(JUMP_MARKER_OPEN), true, 1)[1].to_int();
+				int jump_count = line_content.get_slice(String::chr(JUMP_MARKER_OPEN), 1).to_int();
 				PackedStringArray data_slice = _current_open_data.slice(current_line_idx + 1, current_line_idx + 1 + jump_count);
 				bool is_target_array = false;
 				if (!data_slice.is_empty()) {
@@ -359,7 +405,7 @@ Variant PreBuiltIndexJSON::get_value(const String &p_key_path, const Variant &p_
 			_mutex->unlock();
 			return p_default;
 		}
-		int jump_count = line_content.split(String::chr(JUMP_MARKER_OPEN), true, 1)[1].to_int();
+		int jump_count = line_content.get_slice(String::chr(JUMP_MARKER_OPEN), 1).to_int();
         if (current_line_idx + 1 < _current_open_data.size()) {
 		    is_parent_array = _get_line_key_part(_current_open_data[current_line_idx + 1]).begins_with("[");
         } else {
@@ -418,7 +464,7 @@ bool PreBuiltIndexJSON::has_path(const String &p_key_path) const {
 			_mutex->unlock();
 			return result;
 		}
-		int jump_count = line_content.split(String::chr(JUMP_MARKER_OPEN), true, 1)[1].to_int();
+		int jump_count = line_content.get_slice(String::chr(JUMP_MARKER_OPEN), 1).to_int();
         if (current_line_idx + 1 < _current_open_data.size()) {
 		    is_parent_array = _get_line_key_part(_current_open_data[current_line_idx + 1]).begins_with("[");
         } else {
@@ -521,9 +567,10 @@ PackedStringArray PreBuiltIndexJSON::get_sub_paths(const String &p_key_path) con
 	return sub_paths;
 }
 
-Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::open_file(const String &p_path) {
+Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::open_file(const String &p_path,const bool &ignore_hash) {
 	_mutex->lock();
 	clear_caches();
+	_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::OK)));
 	Ref<FileAccess> file = FileAccess::open(p_path, FileAccess::ModeFlags::READ);
 	if (file.is_null()) {
 		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(FileAccess::get_open_error())));
@@ -532,36 +579,81 @@ Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::open_file(const String &p_path) 
 	}
 	_current_open_file = p_path;
 	_current_open_data = file->get_as_text().split("\n", false);
-	_remove_trailing_empty_line(_current_open_data);
-	_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::OK)));
+	_open_data(_current_open_data,ignore_hash);
 	_mutex->unlock();
 	return _last_error;
 }
 
-void PreBuiltIndexJSON::open_from_string(const String &p_data) {
+Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::open_from_string(const String &p_data,const bool &ignore_hash) {
+	_mutex->lock();
+	_current_open_file = "";
+	Ref<PreBuiltIndexJSONOutput> output= _open_data(p_data.split("\n", false),ignore_hash);
+	_mutex->unlock();
+	return output;
+}
+
+Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::open_from_array(const PackedStringArray &p_data,const bool &ignore_hash) {
 	_mutex->lock();
 	clear_caches();
 	_current_open_file = "";
-	_current_open_data = p_data.split("\n", false);
-	_remove_trailing_empty_line(_current_open_data);
+	Ref<PreBuiltIndexJSONOutput> output= _open_data(p_data,ignore_hash);
 	_mutex->unlock();
+	return output;
 }
 
-void PreBuiltIndexJSON::open_from_array(const PackedStringArray &p_data) {
-	_mutex->lock();
+Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::_open_data(const PackedStringArray &p_data,const bool &ignore_hash) {
 	clear_caches();
-	_current_open_file = "";
-	_current_open_data = p_data;
-	_remove_trailing_empty_line(_current_open_data);
-	_mutex->unlock();
+	_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::OK)));
+	if (p_data.size() <1) {
+		return _last_error;
+	}
+	
+	Dictionary header = _parse_header(p_data.get(0));
+	if (header.size() <1 && _last_error->get_error_type() != PreBuiltIndexJSONOutput::OK) {
+		return _last_error;
+	}
+
+	if (header.get("FV","") != get_pbijson_format()) {
+		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_FORMAT,"File format version does not match")));
+		return _last_error;
+	}
+	PackedStringArray context_data = p_data;
+	_remove_trailing_empty_line(context_data);
+	context_data.remove_at(0);
+	if (!ignore_hash) {
+		String text = String("\n").join(context_data);
+		String hash_algo =  header.get("HASH_ALGO","MD5");
+		String hash = "";
+		if (hash_algo == "MD5") {
+			hash = text.md5_text();
+		} else if (hash_algo == "SHA-256") {
+			hash = text.sha256_text();
+		} else {
+			_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_FORMAT,"Unknown hash algorithm.")));
+			return _last_error;
+		}
+
+		
+		if (hash.strip_edges() != String(header.get("HASH",hash)).strip_edges()) {
+			Array format_data = Array();
+			format_data.append(hash);
+			format_data.append(header.get("HASH",hash));
+			_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_HASH,String("hash verification error: {0}/{1}").format(format_data) )));
+			return _last_error;
+		}
+
+	}
+	
+	_current_open_data = context_data;
+	return _last_error;
 }
 
-Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::reload_file() {
+Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::reload_file(const bool &ignore_hash) {
 	if (get_opened_file().is_empty()) {
 		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_FILE_NOT_FILE)));
 		return _last_error;
 	}
-	return open_file(_current_open_file);
+	return open_file(_current_open_file,ignore_hash);
 }
 
 void PreBuiltIndexJSON::clear() {
@@ -594,7 +686,10 @@ bool PreBuiltIndexJSON::remove_from_cache(CacheFlags p_flag, const StringName &p
 }
 
 Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::get_last_error() const {
-	return _last_error;
+    _mutex->lock();
+    Ref<PreBuiltIndexJSONOutput> err = _last_error;
+    _mutex->unlock();
+    return err;
 }
 
 bool PreBuiltIndexJSON::is_data_loaded() const {
@@ -750,7 +845,7 @@ Variant PreBuiltIndexJSON::_rebuild_container_from_slice(const PackedStringArray
 				continue;
 			}
 			if (line.contains(String::chr(JUMP_MARKER_OPEN))) {
-				int jump = line.split(String::chr(JUMP_MARKER_OPEN), true, 1)[1].to_int();
+				int jump = line.get_slice(String::chr(JUMP_MARKER_OPEN), 1).to_int();
 				if (i + 1 + jump > p_slice.size()) {
 					_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_LINE_IN_JUMP_MARKER, "Corrupted jump mark found in data slice.")));
 					return Variant();
@@ -776,7 +871,7 @@ Variant PreBuiltIndexJSON::_rebuild_container_from_slice(const PackedStringArray
 			}
 			Variant key = json->parse_string(_get_line_key_part(line));
 			if (line.contains(String::chr(JUMP_MARKER_OPEN))) {
-				int jump = line.split(String::chr(JUMP_MARKER_OPEN), true, 1)[1].to_int();
+				int jump = line.get_slice(String::chr(JUMP_MARKER_OPEN), 1).to_int();
 				if (i + 1 + jump > p_slice.size()) {
 					_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_LINE_IN_JUMP_MARKER, "Corrupted jump mark found in data slice.")));
 					i++;
@@ -796,6 +891,7 @@ Variant PreBuiltIndexJSON::_rebuild_container_from_slice(const PackedStringArray
 }
 
 Dictionary PreBuiltIndexJSON::_find_container_slice(const String &p_key_path) const {
+
 	_last_error->clear();
 	if (!is_data_loaded()) {
 		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_DATA_NOT_OPEN)));
@@ -830,7 +926,8 @@ Dictionary PreBuiltIndexJSON::_find_container_slice(const String &p_key_path) co
 			return Dictionary();
 		}
 		if (line_content.contains(String::chr(JUMP_MARKER_OPEN))) {
-			int jump_count = line_content.split(String::chr(JUMP_MARKER_OPEN), true, 1)[1].to_int();
+			int marker_pos = line_content.find(String::chr(JUMP_MARKER_OPEN));
+			int jump_count = line_content.substr(marker_pos + 1).to_int();
 			if (jump_count > 0 && current_line_idx + 1 < _current_open_data.size()) {
 				is_parent_array = _get_line_key_part(_current_open_data[current_line_idx + 1]).begins_with("[");
 			} else {
@@ -847,7 +944,7 @@ Dictionary PreBuiltIndexJSON::_find_container_slice(const String &p_key_path) co
 	}
 	const String &final_line_content = _current_open_data[find_result["line_idx"]];
 	if (!final_line_content.contains(String::chr(JUMP_MARKER_OPEN))) return Dictionary();
-	int jump = final_line_content.split(String::chr(JUMP_MARKER_OPEN), true, 1)[1].to_int();
+	int jump = final_line_content.get_slice(String::chr(JUMP_MARKER_OPEN), 1).to_int();
 	int start_idx = (int)find_result["line_idx"] + 1;
 	int child_depth = path_parts.size() + 1;
 	Dictionary result;
@@ -855,4 +952,31 @@ Dictionary PreBuiltIndexJSON::_find_container_slice(const String &p_key_path) co
 	result["end_idx"] = start_idx + jump;
 	result["child_depth"] = child_depth;
 	return result;
+}
+
+Dictionary PreBuiltIndexJSON::_parse_header(const String &p_line) {
+	// File header format
+	// key>value|key2>value2
+	Dictionary header = Dictionary();
+	if (p_line.begins_with(":")) {
+		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_FORMAT,"The file header does not exist.")));
+		return header;
+	}
+	
+	PackedStringArray fields = p_line.split("|");
+	if (fields.size() < 1) {
+		_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_FORMAT,"The file header does not exist.")));
+		return header;
+	}
+	for (int i=0;i < fields.size();i++) {
+		PackedStringArray field = fields.get(i).split(">",1);
+		if (field.size() < 2) {
+			_last_error = Ref<PreBuiltIndexJSONOutput>(memnew(PreBuiltIndexJSONOutput(PreBuiltIndexJSONOutput::ERR_FILE_HEADER,"Error in file header parseing: " + fields.get(i))));
+			return Dictionary();
+		}
+		
+		header.set(field[0],field[1]);
+		
+	}
+	return header;
 }

@@ -13,9 +13,24 @@
 			<method name="build_from_file">
 				<return type="PreBuiltIndexJSONOutput" />
 				<param index="0" name="json_file" type="String" />
+				<description>
+					Builds a PBIJSON-formatted string from a standard JSON file. If successful, the returned [PreBuiltIndexJSONOutput] object will contain the PBIJSON-formatted string data; if it fails, it will contain an error message.
+					See also:[method build_from_file_to] , [method build_from_string].
+				</description>
+			</method>
+			<method name="get_pbijson_format">
+				<return type="String" />
+				<description>
+					Return to the used PBIJSON format version.
+				</description>
+			</method>
+			<method name="build_from_file_to">
+				<return type="PreBuiltIndexJSONOutput" />
+				<param index="0" name="json_file" type="String" />
 				<param index="1" name="target_path" type="String" />
 				<description>
 					Builds a PBIJSON file from a standard JSON file and saves it to the specified path. If successful, the returned [PreBuiltIndexJSONOutput] object will contain the PBIJSON-formatted string data; if it fails, it will contain an error message.
+					See also:[method build_from_file] , [method build_from_string].
 				</description>
 			</method>
 			<method name="build_from_string">
@@ -23,6 +38,7 @@
 				<param index="0" name="json_text" type="String" />
 				<description>
 					Builds a PBIJSON-formatted string from a string containing standard JSON data. If successful, the returned [PreBuiltIndexJSONOutput] object will contain the PBIJSON-formatted string data; if it fails, it will contain an error message.
+					See also:[method build_from_file] , [method build_from_file_to].
 				</description>
 			</method>
 			<method name="clear">
@@ -128,28 +144,39 @@
 			<method name="open_file">
 				<return type="PreBuiltIndexJSONOutput" />
 				<param index="0" name="path" type="String" />
+				<param index="1" name="ignore_hash" type="bool" default="false" />
 				<description>
 					Opens a PBIJSON file for reading. If successful, the error type of the returned [PreBuiltIndexJSONOutput] object will be [code]OK[/code]; otherwise, it will contain an error message.
+					When [param ignore_hash] is set to [code]true[/code], the hash verification will be ignored.
+					See also: [method open_from_array] , [method open_from_string]
 				</description>
 			</method>
 			<method name="open_from_array">
 				<return type="void" />
 				<param index="0" name="data" type="PackedStringArray" />
+				<param index="1" name="ignore_hash" type="bool" default="false" />
 				<description>
 					Loads data from a [PackedStringArray] containing PBIJSON data. Each element in the array represents a line from the file.
+					When [param ignore_hash] is set to [code]true[/code], the hash verification will be ignored.
+					See also: [method open_file] , [method open_from_string]
 				</description>
 			</method>
 			<method name="open_from_string">
 				<return type="void" />
 				<param index="0" name="data" type="String" />
+				<param index="1" name="ignore_hash" type="bool" default="false" />
 				<description>
 					Loads data from a string containing PBIJSON data.
+					When [param ignore_hash] is set to [code]true[/code], the hash verification will be ignored.
+					See also: [method open_file] , [method open_from_array]
 				</description>
 			</method>
 			<method name="reload_file">
 				<return type="PreBuiltIndexJSONOutput" />
+				<param index="0" name="ignore_hash" type="bool" default="false" />
 				<description>
 					Reloads the file that was originally opened via [method open_file]. An error will be generated if the object is not currently loaded from a file.
+					When [param ignore_hash] is set to [code]true[/code], the hash verification will be ignored.
 				</description>
 			</method>
 			<method name="remove_from_cache">

@@ -39,7 +39,8 @@ void PreBuiltIndexJSONOutput::_bind_methods() {
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_VALUE_PARSE", ERR_VALUE_PARSE);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_INVALID_PATH", ERR_INVALID_PATH);
 	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_LINE_IN_JUMP_MARKER", ERR_LINE_IN_JUMP_MARKER);
-
+	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_FILE_HEADER", ERR_FILE_HEADER);
+	ClassDB::bind_integer_constant(get_class_static(), "ErrorType", "ERR_FILE_FORMAT", ERR_FORMAT);
     
 
     ClassDB::bind_method(D_METHOD("get_message"), &PreBuiltIndexJSONOutput::get_message);
@@ -122,13 +123,17 @@ int PreBuiltIndexJSONOutput::get_line() const {
 
 bool PreBuiltIndexJSONOutput::has_message() const {
 	switch (_error_type) {
-		case ERR_JSON_PARSE:
-		case ERR_UNSUPPORTED_TYPE:
-            return true;
-		case ERR_VALUE_PARSE:
-		case ERR_INVALID_PATH:
-		case ERR_LINE_IN_JUMP_MARKER:
-			return true;
+		case ERR_BUILT_IN_METHOD:return false;
+		case ERR_JSON_PARSE:return true;
+		case ERR_UNSUPPORTED_TYPE:return true;
+        case ERR_FILE_NOT_FILE:return false;
+		case ERR_DATA_NOT_OPEN:return false;
+		case ERR_VALUE_PARSE:return true;
+		case ERR_INVALID_PATH:return true;
+		case ERR_LINE_IN_JUMP_MARKER:return true;
+		case ERR_FILE_HEADER:return true;
+		case ERR_HASH:return true;
+		case ERR_FORMAT:return true;
 		default:
 			return false;
 	}
@@ -136,16 +141,24 @@ bool PreBuiltIndexJSONOutput::has_message() const {
 
 bool PreBuiltIndexJSONOutput::has_line() const {
 	switch (_error_type) {
-		case ERR_JSON_PARSE:
-		case ERR_VALUE_PARSE:
-			return true;
+		case ERR_BUILT_IN_METHOD:return false;
+		case ERR_JSON_PARSE:return true;
+		case ERR_UNSUPPORTED_TYPE:return true;
+        case ERR_FILE_NOT_FILE:return false;
+		case ERR_DATA_NOT_OPEN:return false;
+		case ERR_VALUE_PARSE:return true;
+		case ERR_INVALID_PATH:return false;
+		case ERR_LINE_IN_JUMP_MARKER:return false;
+		case ERR_FILE_HEADER:return false;
+		case ERR_HASH:return false;
+		case ERR_FORMAT:return false;
 		default:
 			return false;
 	}
 }
 
 bool PreBuiltIndexJSONOutput::has_data() const {
-	return (_error_type == OK);
+	return (_error_type == OK && !_data.is_empty());
 }
 
 void PreBuiltIndexJSONOutput::set_error_type(ErrorType p_error_type) {

@@ -68,11 +68,10 @@ private:
 	PackedStringArray _build_buffer;
 	
 	CacheFlags cache_flags = ALL;
-	// Use a unique_ptr to avoid needing the full CacheManager definition here
+
 	class CacheManager* _cache_manager;
 	mutable Ref<PreBuiltIndexJSONOutput> _last_error;
 
-	// Private Methods
 	void _build_flat_index_recursive(const Variant &p_current_value, int p_depth, Dictionary &p_container_lines);
 	void _add_jump_marks_to_buffer(Dictionary &p_container_lines);
 	int _get_line_depth(const String &p_line) const;
@@ -83,20 +82,25 @@ private:
 	Variant _rebuild_container_from_slice(const PackedStringArray &p_slice, int p_base_depth, bool p_is_array) const;
     Dictionary _find_container_slice(const String &p_key_path) const;
     void _remove_trailing_empty_line(PackedStringArray &p_array) const;
+	Ref<PreBuiltIndexJSONOutput> _open_data(const PackedStringArray &p_data,const bool &ignore_hash = false);
 
+	String _generate_file_header(const Dictionary &data);
+	Dictionary _parse_header(const String &p_line);
+	Ref<PreBuiltIndexJSONOutput> PreBuiltIndexJSON::_build(const String &p_json_text);
 public:
 	PreBuiltIndexJSON();
 	~PreBuiltIndexJSON() override;
 
 	// Build methods
 	Ref<PreBuiltIndexJSONOutput> build_from_string(const String &p_json_text);
-	Ref<PreBuiltIndexJSONOutput> build_from_file(const String &p_json_file, const String &p_target_path);
+	Ref<PreBuiltIndexJSONOutput> build_from_file(const String &p_json_file);
+	Ref<PreBuiltIndexJSONOutput> build_from_file_to(const String &p_json_file, const String &p_target_path);
 
 	// Data loading methods
-	Ref<PreBuiltIndexJSONOutput> open_file(const String &p_path);
-	void open_from_string(const String &p_data);
-	void open_from_array(const PackedStringArray &p_data);
-	Ref<PreBuiltIndexJSONOutput> reload_file();
+	Ref<PreBuiltIndexJSONOutput> open_file(const String &p_path,const bool &ignore_hash = false);
+	Ref<PreBuiltIndexJSONOutput> open_from_string(const String &p_data,const bool &ignore_hash = false);
+	Ref<PreBuiltIndexJSONOutput> open_from_array(const PackedStringArray &p_data,const bool &ignore_hash = false);
+	Ref<PreBuiltIndexJSONOutput> reload_file(const bool &ignore_hash = false);
 
 	// Data query methods
 	Variant get_value(const String &p_key_path, const Variant &p_default = Variant()) const;
@@ -122,6 +126,9 @@ public:
 	bool is_cache_enabled(CacheFlags p_flag) const;
 	void set_cache_enabled(CacheFlags p_flag, bool p_enabled);
     bool has_in_cache(CacheFlags p_flag, const StringName &p_key_path) const;
+
+	
+	static String get_pbijson_format();
 };
 
 // Now that the class is defined, we can add the macro.
